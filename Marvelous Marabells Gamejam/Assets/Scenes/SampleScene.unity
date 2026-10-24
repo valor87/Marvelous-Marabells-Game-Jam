@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 1451948704}
   - component: {fileID: 1451948706}
   - component: {fileID: 1451948707}
+  - component: {fileID: 1451948708}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -825,6 +826,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   _rotationSpeed: 5
   _cameraTransform: {fileID: 330585546}
+--- !u!114 &1451948708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451948702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1317325791331d942a1ddeb401108630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
