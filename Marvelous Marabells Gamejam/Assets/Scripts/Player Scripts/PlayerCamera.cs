@@ -5,7 +5,7 @@ public class PlayerCamera : MonoBehaviour
 {
     [Header("Camera Properties")]
     [SerializeField] private float _rotationSpeed;
-    [Header("The camera that the plaeyr uses")]
+    [Header("The camera that the player uses")]
     [SerializeField] private Transform _cameraTransform;
 
     private void Start()

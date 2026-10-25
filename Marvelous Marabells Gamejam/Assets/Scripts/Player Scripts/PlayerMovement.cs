@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerRB.AddForce(gravityHandeler(), ForceMode.Acceleration);
         _playerRB.linearVelocity = movementHandeler();
-        Debug.Log(transform.eulerAngles);
         if (transform.eulerAngles.x >= 270 && transform.eulerAngles.x <= 340)
         {
             _playerRB.linearVelocity = Vector3.zero;

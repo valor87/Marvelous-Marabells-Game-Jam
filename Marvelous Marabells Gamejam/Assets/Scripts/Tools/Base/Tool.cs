@@ -6,9 +6,14 @@ public class Tool : MonoBehaviour
     [SerializeField] Mesh toolMesh;
 
 
-    public virtual void useTool()
+    public virtual void useToolPrimary()
     {
-        Debug.Log($"Tools {gameObject.name} has been used");
+        Debug.Log($"Tools {gameObject.name} primary has been used");
+    }
+
+    public virtual void useToolSecondary()
+    {
+        Debug.Log($"Tools {gameObject.name} secondary has been used");
     }
 
     public virtual void equipTool()
@@ -21,4 +26,9 @@ public class Tool : MonoBehaviour
         Debug.Log($"Tools {gameObject.name} has been broken");
     }
 
+    public void fallowPlayer(Transform playerTransform)
+    {
+        transform.position = playerTransform.position;
+        transform.eulerAngles = playerTransform.eulerAngles;
+    }
 }

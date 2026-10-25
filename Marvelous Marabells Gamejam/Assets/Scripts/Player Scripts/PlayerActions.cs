@@ -2,18 +2,33 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
+    [SerializeField] private KeyCode _useToolPrimary;
+    [SerializeField] private KeyCode _useToolSecondary;
 
-    [SerializeField] private Tools toolEquiped;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Tool _toolEquiped;
+    [SerializeField] private Transform _toolHeldPosition;
     void Start()
     {
-        
+        if(_toolEquiped == null)
+            this.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        playerInput();
+        _toolEquiped.fallowPlayer(_toolHeldPosition);
+    }
+
+    private void playerInput()
+    {
+        if (Input.GetKeyDown(_useToolPrimary))
+        {
+            _toolEquiped.useToolPrimary();
+        }
+
+        if (Input.GetKeyDown(_useToolSecondary))
+        {
+            _toolEquiped.useToolSecondary();
+        }
     }
 }
