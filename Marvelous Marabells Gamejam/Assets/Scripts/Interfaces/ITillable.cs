@@ -1,4 +1,4 @@
-public interface IInteraction
+public interface IInteractable
 {
     public toolTypes toolRequired { get; set; }
     void Execute(toolTypes usedTool);

@@ -41,9 +41,20 @@ public class PlayerActions : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
         {
-            if (hit.collider.GetComponent<IInteraction>() != null &&
-                hit.collider.GetComponent<IInteraction>().toolRequired == _toolEquiped.thisTool.toolType)
+            IInteractable interaction = null;
+
+            if (hit.collider.GetComponent<IInteractable>() != null)
             {
+                interaction = hit.collider.GetComponent<IInteractable>();
+            }
+            else
+            {
+                return;
+            }
+
+            if (interaction.toolRequired == _toolEquiped.thisTool.toolType)
+            {
+                interaction.Execute(_toolEquiped.thisTool.toolType);
                 Debug.Log("Tool being used correctly");
             }
         }
