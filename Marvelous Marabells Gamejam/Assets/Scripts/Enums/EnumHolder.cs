@@ -1,8 +1,7 @@
 public enum toolTypes
 {
-    FarmingTool,
-    Seeds,
-    Food,
-    Crop,
-    Weapon,
+    Hoe,
+    WateringCan,
+    Hammer,
+    Axe,
 }

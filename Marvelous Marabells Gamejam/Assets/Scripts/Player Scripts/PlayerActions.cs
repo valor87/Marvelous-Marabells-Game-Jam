@@ -11,7 +11,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Transform _toolHeldPosition;
     void Start()
     {
-        if(_toolEquiped == null)
+        if (_toolEquiped == null)
             this.enabled = false;
     }
 
@@ -39,7 +39,7 @@ public class PlayerActions : MonoBehaviour
     void preformToolAction()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
         {
             IInteractable interaction = null;
 
@@ -52,11 +52,10 @@ public class PlayerActions : MonoBehaviour
                 return;
             }
 
-            if (interaction.toolRequired == _toolEquiped.thisTool.toolType)
-            {
-                interaction.Execute(_toolEquiped.thisTool.toolType);
-                Debug.Log("Tool being used correctly");
-            }
+
+            interaction.Execute(_toolEquiped.thisTool.toolType);
+            Debug.Log("Tool being used correctly");
+
         }
     }
 

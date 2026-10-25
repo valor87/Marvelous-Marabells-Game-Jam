@@ -1371,6 +1371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantableSoil
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
+  wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
 --- !u!1 &793216950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantableSoil
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
+  wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
 --- !u!64 &917075313
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1943,10 +1945,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177232567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27fc9f83c7b37843bb3bfd82fe86302, type: 3}
+  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GardenHoe
-  thisTool: {fileID: 11400000, guid: 2b5e6fc855627e44887cacb19e4ceba4, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::Tool
+  thisTool: {fileID: 11400000, guid: 10af32c00d9eb034b9f1726b688d6946, type: 2}
   toolImage: {fileID: 21300000, guid: 7ad4525e137a2d940b2ffa164bb1089b, type: 3}
   _toolMesh: {fileID: -5495902117074765545, guid: 06f62f1966153c9439fcac24af0ef722, type: 3}
   rotationChangeValue: 500
@@ -2250,7 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1317325791331d942a1ddeb401108630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
-  _toolEquiped: {fileID: 1569832708}
+  _toolEquiped: {fileID: 1569832712}
   _useToolPrimary: 323
   _useToolSecondary: 324
   toolUsedDistance: 5
@@ -2268,7 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   playerTools:
-  - {fileID: 1569832708}
+  - {fileID: 1569832712}
   - {fileID: 1177232568}
   - {fileID: 1453691981}
 --- !u!1001 &1453691979
@@ -2454,14 +2456,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 15c0406aa723d714886760d618601fdc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1569832708}
+      addedObject: {fileID: 1569832712}
   m_SourcePrefab: {fileID: 100100000, guid: 15c0406aa723d714886760d618601fdc, type: 3}
 --- !u!1 &1569832707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 15c0406aa723d714886760d618601fdc, type: 3}
   m_PrefabInstance: {fileID: 1569832706}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1569832708
+--- !u!114 &1569832712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2470,9 +2472,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1569832707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27fc9f83c7b37843bb3bfd82fe86302, type: 3}
+  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GardenHoe
+  m_EditorClassIdentifier: Assembly-CSharp::Tool
   thisTool: {fileID: 11400000, guid: 2b5e6fc855627e44887cacb19e4ceba4, type: 2}
   toolImage: {fileID: 21300000, guid: 8047209b6c933644883015b354c5363c, type: 3}
   _toolMesh: {fileID: -2988148590550946077, guid: 15c0406aa723d714886760d618601fdc, type: 3}
@@ -2587,6 +2589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantableSoil
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
+  wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
 --- !u!64 &1669104118
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2746,6 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantableSoil
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
+  wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
 --- !u!64 &1994073741
 MeshCollider:
   m_ObjectHideFlags: 0
