@@ -544,6 +544,7 @@ MonoBehaviour:
   - {fileID: 703775948}
   - {fileID: 1005453724}
   - {fileID: 1142772726}
+  _glowingBackground: {fileID: 372260604}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,7 +2270,7 @@ MonoBehaviour:
   playerTools:
   - {fileID: 1569832708}
   - {fileID: 1177232568}
-  - {fileID: 0}
+  - {fileID: 1453691981}
 --- !u!1001 &1453691979
 PrefabInstance:
   m_ObjectHideFlags: 0
