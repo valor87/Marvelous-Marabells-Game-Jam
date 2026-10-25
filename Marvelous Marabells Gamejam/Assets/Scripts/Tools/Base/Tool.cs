@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Tool : MonoBehaviour
 {
-    [SerializeField] ToolsObject thisTool;
+    public ToolsObject thisTool;
     [SerializeField] Mesh toolMesh;
 
 

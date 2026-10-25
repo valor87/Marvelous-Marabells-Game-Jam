@@ -870,6 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1317325791331d942a1ddeb401108630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerActions
+  toolUsedDistance: 5
   _useToolPrimary: 323
   _useToolSecondary: 324
   _toolEquiped: {fileID: 1569832708}

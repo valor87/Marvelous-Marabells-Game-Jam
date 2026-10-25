@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
+    [SerializeField] float toolUsedDistance;
+
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
 
@@ -15,6 +17,7 @@ public class PlayerActions : MonoBehaviour
 
     void Update()
     {
+        Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
         playerInput();
         _toolEquiped.fallowPlayer(_toolHeldPosition);
     }
@@ -23,12 +26,26 @@ public class PlayerActions : MonoBehaviour
     {
         if (Input.GetKeyDown(_useToolPrimary))
         {
+            preformToolAction();
             _toolEquiped.useToolPrimary();
         }
 
         if (Input.GetKeyDown(_useToolSecondary))
         {
             _toolEquiped.useToolSecondary();
+        }
+    }
+
+    void preformToolAction()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        {
+            if (hit.collider.GetComponent<IInteraction>() != null &&
+                hit.collider.GetComponent<IInteraction>().toolRequired == _toolEquiped.thisTool.toolType)
+            {
+                Debug.Log("Tool being used correctly");
+            }
         }
     }
 }
