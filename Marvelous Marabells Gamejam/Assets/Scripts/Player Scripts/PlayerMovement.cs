@@ -29,6 +29,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private Vector3 movementHandeler()
     {
-        return (_orientation.right * -Input.GetAxis("Horizontal") + _orientation.forward * -Input.GetAxis("Vertical")) * _movementSpeed;
+        return (_orientation.right * Input.GetAxis("Horizontal") + _orientation.forward * Input.GetAxis("Vertical")) * _movementSpeed;
     }
 }

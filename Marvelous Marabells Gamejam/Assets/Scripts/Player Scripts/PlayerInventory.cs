@@ -40,9 +40,10 @@ public class PlayerInventory : MonoBehaviour
             
             // call the event for changing tools
             _eventCore.UE_ToolChange.Invoke(playerTools[item]);
-
-            playerTool.deactivateTool();
-            playerTools[item].activateTool();
+            if(playerTool != null)
+                playerTool.deactivateTool();
+            if (playerTools[item] != null)
+                playerTools[item].activateTool();
         }
 
         // same as above but for the reverse
@@ -57,9 +58,10 @@ public class PlayerInventory : MonoBehaviour
                 item = playerTools.Length - 1;
             _playerActions.changeTool(playerTools[item]);
             _eventCore.UE_ToolChange.Invoke(playerTools[item]);
-
-            playerTool.deactivateTool();
-            playerTools[item].activateTool();
+            if(playerTool != null)
+                playerTool.deactivateTool();
+            if (playerTools[item] != null)
+                playerTools[item].activateTool();
         }
     }
 }

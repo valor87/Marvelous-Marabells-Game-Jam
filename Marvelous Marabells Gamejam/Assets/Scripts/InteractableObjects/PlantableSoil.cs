@@ -8,6 +8,8 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [SerializeField] Material wateredMaterial;
     public toolTypes toolRequired { get; set; }
 
+    //private 
+
     private bool _isTilled;
     private bool _isWatered;
     private bool _isPlanted;
@@ -15,18 +17,11 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     void Start()
     {
         GetComponent<MeshRenderer>().material = grassMaterial;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Execute(toolTypes usedTool)
     {
-        switch (usedTool) 
+        switch (usedTool)
         {
             case toolTypes.Hoe:
                 GetComponent<MeshRenderer>().material = tilledMaterial;
@@ -43,8 +38,10 @@ public class PlantableSoil : MonoBehaviour, IInteractable
                 GetComponent<MeshRenderer>().material = wateredMaterial;
                 _isWatered = true;
                 break;
-
+            case toolTypes.Seeds:
+                Debug.Log("A seed has been planted");
+                break;
         }
-       
+
     }
 }

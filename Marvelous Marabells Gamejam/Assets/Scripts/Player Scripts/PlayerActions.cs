@@ -18,6 +18,9 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
+        if (_toolEquiped == null)
+            return;
+
         playerInput();
         _toolEquiped.fallowPlayer(_toolHeldPosition);
     }
