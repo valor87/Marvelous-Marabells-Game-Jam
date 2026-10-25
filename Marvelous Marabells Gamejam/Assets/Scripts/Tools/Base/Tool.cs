@@ -3,7 +3,8 @@ using UnityEngine;
 public class Tool : MonoBehaviour
 {
     public ToolsObject thisTool;
-    [SerializeField] Mesh toolMesh;
+    public Sprite toolImage;
+    [SerializeField] Mesh _toolMesh;
 
 
     public virtual void useToolPrimary()
@@ -26,9 +27,9 @@ public class Tool : MonoBehaviour
         Debug.Log($"Tools {gameObject.name} has been broken");
     }
 
-    public void fallowPlayer(Transform playerTransform)
+    public void fallowPlayer(Transform _playerTransform)
     {
-        transform.position = playerTransform.position;
-        transform.eulerAngles = playerTransform.eulerAngles;
+        transform.position = _playerTransform.position;
+        transform.eulerAngles = _playerTransform.eulerAngles;
     }
 }

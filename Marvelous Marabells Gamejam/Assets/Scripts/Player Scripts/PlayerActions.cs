@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    [SerializeField] float toolUsedDistance;
+    [SerializeField] private Tool _toolEquiped;
 
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
 
-    [SerializeField] private Tool _toolEquiped;
+    [SerializeField] float toolUsedDistance;
     [SerializeField] private Transform _toolHeldPosition;
     void Start()
     {
@@ -58,5 +58,15 @@ public class PlayerActions : MonoBehaviour
                 Debug.Log("Tool being used correctly");
             }
         }
+    }
+
+    public void changeTool(Tool newTool)
+    {
+        _toolEquiped = newTool;
+    }
+
+    public Tool currentlyEquipTool()
+    {
+        return _toolEquiped;
     }
 }
