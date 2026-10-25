@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _sprintSpeed;
     [SerializeField] private float _gravitySpeed;
 
+    [SerializeField] private Transform _orientation;
     private Rigidbody _playerRB;
     private PlayerCamera _playerCamera;
     void Start()
@@ -19,10 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerRB.AddForce(gravityHandeler(), ForceMode.Acceleration);
         _playerRB.linearVelocity = movementHandeler();
-        if (transform.eulerAngles.x >= 270 && transform.eulerAngles.x <= 340)
-        {
-            _playerRB.linearVelocity = Vector3.zero;
-        }
+      
     }
 
     private Vector3 gravityHandeler()
@@ -31,6 +29,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private Vector3 movementHandeler()
     {
-        return (transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical")) * _movementSpeed;
+        return (_orientation.right * -Input.GetAxis("Horizontal") + _orientation.forward * -Input.GetAxis("Vertical")) * _movementSpeed;
     }
 }
