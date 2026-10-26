@@ -6,7 +6,7 @@ public class DisplayTime : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI time;
     private Eventcore _eventCore;
-
+    private int dayNumber = 1;
     private int minutes;
     private int hours;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
