@@ -3,16 +3,18 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     [SerializeField] private Tool _toolEquiped;
+    [SerializeField] private BasePlant _cropEquiped;
+
 
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
+    [SerializeField] private KeyCode _pickPlant;
 
     [SerializeField] float toolUsedDistance;
     [SerializeField] private Transform _toolHeldPosition;
     void Start()
     {
-        if (_toolEquiped == null)
-            this.enabled = false;
+        
     }
 
     void Update()
@@ -22,11 +24,19 @@ public class PlayerActions : MonoBehaviour
             return;
 
         playerInput();
-        _toolEquiped.fallowPlayer(_toolHeldPosition);
     }
 
     private void playerInput()
     {
+        if (Input.GetKeyDown(_pickPlant))
+        {
+            pickPlant();
+        }
+        if (_toolEquiped == null)
+            return;
+        /////// if the player has a tool in hand//////
+        _toolEquiped.fallowPlayer(_toolHeldPosition);
+
         if (Input.GetKeyDown(_useToolPrimary))
         {
             preformToolAction();
@@ -37,8 +47,9 @@ public class PlayerActions : MonoBehaviour
         {
             _toolEquiped.useToolSecondary();
         }
-    }
 
+        
+    }
     void preformToolAction()
     {
         RaycastHit hit;
@@ -65,13 +76,36 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
+    void pickPlant()
+    {
+        IInteractable interaction = null;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        {
+            if (hit.collider.GetComponent<BasePlant>() != null)
+            {
+                interaction = hit.collider.GetComponent<IInteractable>();
+                interaction.Execute(toolTypes.None);
+            }
+        }
+    }
+
     public void changeTool(Tool newTool)
     {
         _toolEquiped = newTool;
     }
 
+    public void changeCrop(BasePlant newCrop)
+    {
+        _cropEquiped = newCrop;
+    }
+
     public Tool currentlyEquipTool()
     {
         return _toolEquiped;
+    }
+    public BasePlant currentlyEquipCrop()
+    {
+        return _cropEquiped;
     }
 }
