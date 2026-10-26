@@ -48,13 +48,14 @@ public class PlayerActions : MonoBehaviour
         {
             preformToolAction();
             _toolEquiped.useToolPrimary();
+            useEnergy(-_toolEquiped.thisTool.energyNeeded);
         }
 
         if (Input.GetKeyDown(_useToolSecondary))
         {
             _toolEquiped.useToolSecondary();
-        }
 
+        }
         
     }
     void preformToolAction()
@@ -96,6 +97,11 @@ public class PlayerActions : MonoBehaviour
                 interaction.Execute(toolTypes.None);
             }
         }
+    }
+
+    public void useEnergy(float amountOfEnergy)
+    {
+        _eventCore.UE_UsedEnergy.Invoke(amountOfEnergy);
     }
 
     public void changeTool(Tool newTool)
