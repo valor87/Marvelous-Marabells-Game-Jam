@@ -149,13 +149,17 @@ public class PlayerInventory : MonoBehaviour
     void addCropToInventory(Plants harvestedPlant)
     {
         GameObject inventoryCrop = Instantiate(harvestedPlant.plantObject);
-        inventoryCrop.transform.localScale = Vector3.one/2;
+        inventoryCrop.GetComponent<CapsuleCollider>().enabled = false;
+        inventoryCrop.transform.localScale = Vector3.one / 2;
+        inventoryCrop.GetComponent<BasePlant>().setCurrentGrowTime(inventoryCrop.GetComponent<BasePlant>().getGrowTime());
         foreach (BasePlant currentCrop in playerCrops)
         {
-            if (currentCrop.thisPlantObject == null)
+
+            if (currentCrop == null)
             {
                 int index = Array.IndexOf(playerCrops, currentCrop);
                 playerCrops[index] = inventoryCrop.GetComponent<BasePlant>();
+                return;
             }
         }
     }

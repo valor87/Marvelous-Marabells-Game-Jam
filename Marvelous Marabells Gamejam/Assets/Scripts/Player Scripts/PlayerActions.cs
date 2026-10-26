@@ -22,10 +22,16 @@ public class PlayerActions : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
         if (_toolEquiped == null)
             return;
-
         playerInput();
+        followPlayer();
     }
-
+    void followPlayer()
+    {
+        if(_toolEquiped != null)
+            _toolEquiped.fallowPlayer(_toolHeldPosition);
+        if(_cropEquiped != null)
+            _cropEquiped.fallowPlayer(_toolHeldPosition);
+    }
     private void playerInput()
     {
         if (Input.GetKeyDown(_pickPlant))
@@ -35,7 +41,6 @@ public class PlayerActions : MonoBehaviour
         if (_toolEquiped == null)
             return;
         /////// if the player has a tool in hand//////
-        _toolEquiped.fallowPlayer(_toolHeldPosition);
 
         if (Input.GetKeyDown(_useToolPrimary))
         {
@@ -84,6 +89,7 @@ public class PlayerActions : MonoBehaviour
         {
             if (hit.collider.GetComponent<BasePlant>() != null)
             {
+                Debug.Log($"Crops is {hit.collider.name}");
                 interaction = hit.collider.GetComponent<IInteractable>();
                 interaction.Execute(toolTypes.None);
             }

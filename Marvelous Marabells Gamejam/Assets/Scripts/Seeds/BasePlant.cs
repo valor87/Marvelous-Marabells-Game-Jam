@@ -21,7 +21,7 @@ public class BasePlant : MonoBehaviour, IInteractable
     void Update()
     {
         if (_growTime >= _currentGrowTime) {
-            transform.localScale = (Vector3.one/2) * (_currentGrowTime/_growTime);
+            transform.localScale = (Vector3.one / 2) * (_currentGrowTime / _growTime);
             _currentGrowTime += growSpeed * Time.deltaTime;
         }
 
@@ -35,6 +35,7 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         if (!_fullyGrown)
             return;
+        Debug.Log($"Destroying {gameObject.name} {thisPlantObject.name}");
         _eventCore.UE_PickPlant.Invoke(thisPlantObject);
         Destroy(gameObject);
     }
@@ -50,5 +51,18 @@ public class BasePlant : MonoBehaviour, IInteractable
     public void activateCrop()
     {
         gameObject.SetActive(true);
+    }
+    public void setCurrentGrowTime(float arg)
+    {
+        _currentGrowTime = arg;
+    }
+    public float getGrowTime()
+    {
+        return _growTime;
+    }
+    public void fallowPlayer(Transform _playerTransform)
+    {
+        transform.position = _playerTransform.position;
+        transform.eulerAngles = _playerTransform.eulerAngles;
     }
 }
