@@ -6,11 +6,12 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [SerializeField] Material grassMaterial;
     [SerializeField] Material tilledMaterial;
     [SerializeField] Material wateredMaterial;
+    
+    [HideInInspector] public ToolsObject seedPlanted;
+    [HideInInspector] public BasePlant growingPlant;
     public toolTypes toolRequired { get; set; }
 
-    //private 
     private Eventcore _eventCore;
-    public ToolsObject seedPlanted;
     private bool _isTilled;
     private bool _isWatered;
     private bool _isPlanted;
@@ -20,7 +21,13 @@ public class PlantableSoil : MonoBehaviour, IInteractable
         GetComponent<MeshRenderer>().material = grassMaterial;
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
-
+    void Update()
+    {
+        if (_isPlanted && _isWatered)
+        {
+            growingPlant.growSpeed = 1;
+        }
+    }
     public void Execute(toolTypes usedTool)
     {
         switch (usedTool)
@@ -44,6 +51,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
                 if (!_isTilled)
                     return;
                 _eventCore.UE_PlantItem.Invoke(seedPlanted, transform);
+                _isPlanted = true;
                 break;
         }
 
@@ -52,5 +60,6 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     public void plantSeed(ToolsObject seedTool)
     {
         seedPlanted = seedTool;
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 }

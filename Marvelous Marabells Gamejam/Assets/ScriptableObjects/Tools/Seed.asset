@@ -15,6 +15,6 @@ MonoBehaviour:
   toolName: Seed
   toolType: 3
   twoHanded: 0
-  consumable: 1
+  consumable: 0
   durability: 10
   seedTypes: 1

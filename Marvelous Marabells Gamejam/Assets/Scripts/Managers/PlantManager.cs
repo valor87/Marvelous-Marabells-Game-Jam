@@ -28,6 +28,8 @@ public class PlantManager : MonoBehaviour
                 GameObject _plantObject = Instantiate(plant.plantObject);
                 _plantObject.transform.position = soilTransform.position + Vector3.up;
                 _plantObject.transform.localScale = Vector3.one;
+                _plantObject.GetComponent<BasePlant>().soilPlantedOn = soilTransform.GetComponent<PlantableSoil>();
+                soilTransform.GetComponent<PlantableSoil>().growingPlant = _plantObject.GetComponent<BasePlant>();
             }
         }
     }
