@@ -21,3 +21,9 @@ public enum activeInventory
     Crop,
     Tool,
 }
+
+public enum timePeriod
+{
+    AM,
+    PM,
+}

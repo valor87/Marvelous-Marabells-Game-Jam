@@ -16,4 +16,6 @@ public class Eventcore : MonoBehaviour
     // for when the player harvests plants
     public UnityEvent<Plants> UE_PickPlant;
 
+    public UnityEvent<int> UE_TurnOfTheMinute;
+    public UnityEvent<int> UE_TurnOfTheHour;
 }
