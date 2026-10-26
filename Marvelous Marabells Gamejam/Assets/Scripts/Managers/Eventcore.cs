@@ -11,11 +11,14 @@ public class Eventcore : MonoBehaviour
     public UnityEvent<int> UE_ToolChange;
     //for when the player changes out their item/crop
     public UnityEvent<int> UE_CropChange;
-    //for when the player plants something
+    // for when the player plants something
     public UnityEvent<ToolsObject, Transform> UE_PlantItem;
     // for when the player harvests plants
     public UnityEvent<Plants> UE_PickPlant;
+    // for when the player makes an action that takes energy
+    public UnityEvent<float> UE_UsedEnergy;
 
+    //for in game time
     public UnityEvent<int> UE_TurnOfTheMinute;
     public UnityEvent<int> UE_TurnOfTheHour;
 }

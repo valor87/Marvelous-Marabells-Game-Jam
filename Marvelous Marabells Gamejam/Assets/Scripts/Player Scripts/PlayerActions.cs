@@ -12,9 +12,11 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] float toolUsedDistance;
     [SerializeField] private Transform _toolHeldPosition;
+
+    private Eventcore _eventCore;
     void Start()
     {
-        
+        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
 
     void Update()
