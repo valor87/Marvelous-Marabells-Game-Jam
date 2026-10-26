@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Hoe
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Hoe
-  toolType: 0
+  toolType: 1
   twoHanded: 0
-  durability: 10
   consumable: 0
+  durability: 10
+  seedTypes: 0

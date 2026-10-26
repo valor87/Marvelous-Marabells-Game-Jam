@@ -54,7 +54,10 @@ public class PlayerActions : MonoBehaviour
             {
                 return;
             }
-
+            if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None)
+            {
+                hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisTool);
+            }
 
             interaction.Execute(_toolEquiped.thisTool.toolType);
             Debug.Log("Tool being used correctly");

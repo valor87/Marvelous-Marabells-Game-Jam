@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WateringCan
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Watering can
-  toolType: 1
+  toolType: 2
   twoHanded: 0
   consumable: 0
   durability: 10
+  seedTypes: 0

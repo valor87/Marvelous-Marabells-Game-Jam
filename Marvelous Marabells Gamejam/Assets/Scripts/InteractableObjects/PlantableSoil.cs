@@ -9,7 +9,8 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     public toolTypes toolRequired { get; set; }
 
     //private 
-
+    private Eventcore _eventCore;
+    public ToolsObject seedPlanted;
     private bool _isTilled;
     private bool _isWatered;
     private bool _isPlanted;
@@ -17,6 +18,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     void Start()
     {
         GetComponent<MeshRenderer>().material = grassMaterial;
+        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
 
     public void Execute(toolTypes usedTool)
@@ -39,9 +41,16 @@ public class PlantableSoil : MonoBehaviour, IInteractable
                 _isWatered = true;
                 break;
             case toolTypes.Seeds:
-                Debug.Log("A seed has been planted");
+                if (!_isTilled)
+                    return;
+                _eventCore.UE_PlantItem.Invoke(seedPlanted, transform);
                 break;
         }
 
+    }
+
+    public void plantSeed(ToolsObject seedTool)
+    {
+        seedPlanted = seedTool;
     }
 }

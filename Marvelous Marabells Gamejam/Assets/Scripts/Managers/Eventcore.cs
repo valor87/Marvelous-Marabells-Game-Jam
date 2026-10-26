@@ -10,5 +10,5 @@ public class Eventcore : MonoBehaviour
     //for when the player changes out their item
     public UnityEvent<Tool> UE_ToolChange;
     //for when the player plants something
-    public UnityEvent<ToolsObject, PlantableSoil> UE_PlantItem;
+    public UnityEvent<ToolsObject, Transform> UE_PlantItem;
 }

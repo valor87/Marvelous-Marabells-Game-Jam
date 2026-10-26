@@ -9,4 +9,6 @@ public class ToolsObject : ScriptableObject
     public bool consumable = false;
 
     public int durability = 10;
+    [Header("If the tool is a seed bag")]
+    public seedTypes seedTypes = seedTypes.None;
 }

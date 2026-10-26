@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Seed
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Seed
-  toolType: 2
+  toolType: 3
   twoHanded: 0
   consumable: 1
   durability: 10
+  seedTypes: 1

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: Assembly-CSharp::Plants
   plantName: Corn
+  seedTypes: 1
   sellAmount: 20
   plantObject: {fileID: 2297394921325388876, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}

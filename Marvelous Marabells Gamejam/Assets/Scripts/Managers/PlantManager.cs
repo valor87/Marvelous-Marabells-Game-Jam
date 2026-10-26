@@ -9,13 +9,26 @@ public class PlantManager : MonoBehaviour
      * of land with the right seed
      */
 
-    [SerializeField] private GameObject[] _allPlants = new GameObject[0];
-
+    [SerializeField] private Plants[] _allPlants = new Plants[0];
+    
     private Eventcore _eventCore;
 
     void Start()
     {
-        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();       
+        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _eventCore.UE_PlantItem.AddListener(startPlantGrowing);
     }
 
+    void startPlantGrowing(ToolsObject desiredPlant, Transform soilTransform)
+    {
+        foreach (Plants plant in _allPlants)
+        {
+            if (plant.seedTypes == desiredPlant.seedTypes)
+            {
+                GameObject _plantObject = Instantiate(plant.plantObject);
+                _plantObject.transform.position = soilTransform.position + Vector3.up;
+                _plantObject.transform.localScale = Vector3.one;
+            }
+        }
+    }
 }

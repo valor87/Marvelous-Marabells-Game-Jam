@@ -1372,6 +1372,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  seedPlanted: {fileID: 0}
 --- !u!1 &793216950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1513,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  seedPlanted: {fileID: 0}
 --- !u!64 &917075313
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1955,6 +1957,52 @@ MonoBehaviour:
   toolImage: {fileID: 21300000, guid: 7ad4525e137a2d940b2ffa164bb1089b, type: 3}
   _toolMesh: {fileID: -5495902117074765545, guid: 06f62f1966153c9439fcac24af0ef722, type: 3}
   rotationChangeValue: 500
+--- !u!1 &1276457505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276457507}
+  - component: {fileID: 1276457506}
+  m_Layer: 0
+  m_Name: PlantManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1276457506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276457505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dd882c7fe48f2448828f1bfcda1f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantManager
+  _allPlants:
+  - {fileID: 11400000, guid: c7bfc9bc291a5f142969b113760fd42e, type: 2}
+--- !u!4 &1276457507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276457505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.56715, y: -1.39998, z: -1.97157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305682032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627609157}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7050c3c0c2a38914da1d4dfedcd843c3, type: 3}
   m_Name: 
@@ -2532,7 +2580,7 @@ MonoBehaviour:
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  _growingPlant: {fileID: 11400000, guid: c7bfc9bc291a5f142969b113760fd42e, type: 2}
+  growingPlant: {fileID: 11400000, guid: c7bfc9bc291a5f142969b113760fd42e, type: 2}
 --- !u!135 &1627609159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2737,6 +2785,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  seedPlanted: {fileID: 0}
 --- !u!64 &1669104118
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2897,6 +2946,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  seedPlanted: {fileID: 0}
 --- !u!64 &1994073741
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3158,6 +3208,7 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 1305682033}
   - {fileID: 793216952}
+  - {fileID: 1276457507}
   - {fileID: 1339596344}
   - {fileID: 1941628812}
   - {fileID: 1451948703}
