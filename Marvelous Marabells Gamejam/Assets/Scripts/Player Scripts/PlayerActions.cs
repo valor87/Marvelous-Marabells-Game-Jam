@@ -42,8 +42,8 @@ public class PlayerActions : MonoBehaviour
         }
         if (_toolEquiped == null)
             return;
-        /////// if the player has a tool in hand//////
 
+        /////// if the player has a tool in hand//////
         if (Input.GetKeyDown(_useToolPrimary))
         {
             preformToolAction();
