@@ -9,6 +9,8 @@ public class Eventcore : MonoBehaviour
     public UnityEvent<int> UE_PurchasedItem;
     //for when the player changes out their item/tool
     public UnityEvent<int> UE_ToolChange;
+    //for whent the player adds or removes an object form inventory
+    public UnityEvent UE_ToolInventoryChange;
     //for when the player changes out their item/crop
     public UnityEvent<int> UE_CropChange;
     // for when the player plants something
