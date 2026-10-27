@@ -4,6 +4,7 @@ public class BasePlant : MonoBehaviour, IInteractable
 {
     public float growSpeed;
     public toolTypes toolRequired { get; set; }
+    public toolTypes actionRequired = toolTypes.None;
 
     [SerializeField] private float _growTime;
     [SerializeField] private float _currentGrowTime;

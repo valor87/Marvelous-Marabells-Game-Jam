@@ -43,6 +43,7 @@ public class PlayerActions : MonoBehaviour
             takeDownTools();
             hangUpTool();
             pickPlant();
+            preformEmptyHandAction();
         }
         if (_toolEquiped == null)
             return;
@@ -85,6 +86,21 @@ public class PlayerActions : MonoBehaviour
             interaction.Execute(_toolEquiped.thisTool.toolType);
             Debug.Log("Tool being used correctly");
 
+        }
+    }
+
+    void preformEmptyHandAction()
+    {
+        IInteractable interaction = null;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        {
+            if (hit.collider.GetComponent<IInteractable>() != null)
+            {
+                interaction = hit.collider.GetComponent<IInteractable>();
+                Debug.Log("Preforming empty action");
+                interaction.Execute(toolTypes.None);
+            }
         }
     }
 

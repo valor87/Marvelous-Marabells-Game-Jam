@@ -23,11 +23,20 @@ public class PlayerCamera : MonoBehaviour
         _cameraTransform.position = transform.position;
         _cameraTransform.eulerAngles += cameraRotationHandeler();
         transform.eulerAngles += cameraRotationHandeler();
+
+        if (_rotationSpeed == 0)
+        {
+            _cameraTransform.eulerAngles = transform.eulerAngles;
+        }
     }
 
     private Vector3 cameraRotationHandeler()
     {
         return new( - Input.GetAxis("Mouse Y") * _rotationSpeed, Input.GetAxis("Mouse X") * _rotationSpeed, 0);
+    }
+    public float setRotationSpeed(float newSpeed)
+    {
+        return _rotationSpeed = newSpeed;
     }
     void activatePlayerCamera()
     {
