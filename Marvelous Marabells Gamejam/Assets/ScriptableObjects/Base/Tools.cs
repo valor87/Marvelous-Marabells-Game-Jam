@@ -4,6 +4,7 @@ using UnityEngine;
 public class ToolsObject : ScriptableObject
 {
     public string toolName = "Hoe";
+    public float energyNeeded = 5.0f;
     public toolTypes toolType;
     public bool twoHanded = false;
     public bool consumable = false;

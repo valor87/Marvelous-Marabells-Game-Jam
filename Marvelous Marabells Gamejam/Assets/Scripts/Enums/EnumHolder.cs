@@ -14,3 +14,16 @@ public enum seedTypes
     Corn,
     Peas,
 }
+
+public enum activeInventory
+{
+    None,
+    Crop,
+    Tool,
+}
+
+public enum timePeriod
+{
+    AM,
+    PM,
+}
