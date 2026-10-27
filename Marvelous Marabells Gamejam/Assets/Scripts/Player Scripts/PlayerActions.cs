@@ -17,7 +17,7 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
-        _eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
+        //_eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
         _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerActions);
     }
 
