@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SleepingPoint : MonoBehaviour, IInteractable
 {
@@ -35,6 +36,13 @@ public class SleepingPoint : MonoBehaviour, IInteractable
             float percentComplete = time / totalDuration;
             playersTransform.position = Vector3.Lerp(playerStartPosition, transform.position, percentComplete);
             playersTransform.rotation = Quaternion.Lerp(startRotation, endRotation, percentComplete);
+
+            if (percentComplete >= 0.90f)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
+
+        
     }
 }
