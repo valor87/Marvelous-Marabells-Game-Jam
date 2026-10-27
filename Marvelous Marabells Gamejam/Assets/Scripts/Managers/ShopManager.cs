@@ -2,17 +2,12 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    private PlayerMoney _playerMoney;
-
+    public PlayerMoney _playerMoney = new PlayerMoney();
+    public int _currentMoney;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-            
+            _playerMoney.currentMoney = _currentMoney;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
