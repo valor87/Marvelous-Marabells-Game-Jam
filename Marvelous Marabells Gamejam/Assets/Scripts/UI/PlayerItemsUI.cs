@@ -18,6 +18,7 @@ public class PlayerItemsUI : MonoBehaviour
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
         _eventCore.UE_ToolChange.AddListener(updateUIActiveTool);
         _eventCore.UE_CropChange.AddListener(updateUIActiveCrop);
+        _eventCore.UE_ToolInventoryChange.AddListener(setToolInventoryImages);
     }
 
     private void updateUIActiveTool(int swappedTool)
@@ -36,6 +37,7 @@ public class PlayerItemsUI : MonoBehaviour
         {
             if (item == null)
             {
+                _toolImages[i].sprite = null;
                 i++;
                 continue;
             }

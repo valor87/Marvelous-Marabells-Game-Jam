@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
     [SerializeField] private Tool _toolEquiped;
     [SerializeField] private BasePlant _cropEquiped;
-
+    [SerializeField] private PlayerInventory _playerInventory;
 
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
@@ -17,27 +18,30 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
+        _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerActions);
     }
 
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
-        if (_toolEquiped == null)
-            return;
+       
         playerInput();
         followPlayer();
     }
     void followPlayer()
     {
-        if(_toolEquiped != null)
+        if (_toolEquiped != null)
             _toolEquiped.fallowPlayer(_toolHeldPosition);
-        if(_cropEquiped != null)
+        if (_cropEquiped != null)
             _cropEquiped.fallowPlayer(_toolHeldPosition);
     }
     private void playerInput()
     {
         if (Input.GetKeyDown(_pickPlant))
         {
+            takeDownTools();
+            hangUpTool();
             pickPlant();
         }
         if (_toolEquiped == null)
@@ -56,7 +60,7 @@ public class PlayerActions : MonoBehaviour
             _toolEquiped.useToolSecondary();
 
         }
-        
+
     }
     void preformToolAction()
     {
@@ -98,7 +102,53 @@ public class PlayerActions : MonoBehaviour
             }
         }
     }
+    void hangUpTool()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        {
+            Debug.Log("trying to swap tools");
+            if (_toolEquiped == null)
+            {
+                return;
+            }
 
+            if (hit.collider.GetComponent<ToolWallManager>() != null)
+            {
+                ToolWallManager _toolWall = hit.collider.GetComponent<ToolWallManager>();
+                _toolWall.setToolActive(_toolEquiped.thisTool);
+                GameObject toolToDestroy = _toolEquiped.gameObject;
+                _playerInventory.playerTools[Array.IndexOf(_playerInventory.playerTools, _toolEquiped)] = null;
+                Destroy(_toolEquiped.gameObject);
+                _eventCore.UE_ToolInventoryChange.Invoke();
+            }
+        }
+    }
+    void takeDownTools()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        {
+            if (hit.collider.GetComponent<ToolBoardTool>() != null)
+            {
+                foreach (Tool var in _playerInventory.playerTools)
+                {
+                    if (var != null)
+                    {
+                        continue;
+                    }
+
+                    GameObject grabbedTool = Instantiate(hit.collider.GetComponent<ToolBoardTool>().thisToolPrefab, gameObject.transform);
+                    _playerInventory.playerTools[Array.IndexOf(_playerInventory.playerTools, var)] = grabbedTool.GetComponent<Tool>();
+                    _eventCore.UE_ToolInventoryChange.Invoke();
+                    hit.collider.gameObject.SetActive(false);
+                    break;
+                }
+
+            }
+        }
+    }
     public void useEnergy(float amountOfEnergy)
     {
         _eventCore.UE_UsedEnergy.Invoke(amountOfEnergy);
@@ -121,5 +171,14 @@ public class PlayerActions : MonoBehaviour
     public BasePlant currentlyEquipCrop()
     {
         return _cropEquiped;
+    }
+
+    void activatePlayerActions()
+    {
+        this.enabled = true;
+    }
+    void deactivatePlayerActions()
+    {
+        this.enabled = false;
     }
 }

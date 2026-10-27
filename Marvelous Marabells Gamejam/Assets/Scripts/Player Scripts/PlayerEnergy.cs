@@ -13,6 +13,8 @@ public class PlayerEnergy : MonoBehaviour
         _playerActions = GetComponent<PlayerActions>();
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
         _eventCore.UE_UsedEnergy.AddListener(changeEnergy);
+        _eventCore.UE_ActivatePlayer.AddListener(activatePlayerEnergy);
+        _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerEnergy);
     }
     private void Update()
     {
@@ -37,5 +39,15 @@ public class PlayerEnergy : MonoBehaviour
         if(currentEnergy <= 0) 
             return true;
         return false;
+    }
+
+    void deactivatePlayerEnergy()
+    {
+        this.enabled = false;
+    }
+
+    void activatePlayerEnergy()
+    {
+        this.enabled = true;
     }
 }

@@ -8,10 +8,14 @@ public class PlayerCamera : MonoBehaviour
     [Header("The camera that the player uses")]
     [SerializeField] private Transform _cameraTransform;
 
+    private Eventcore _eventCore;
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _eventCore.UE_ActivatePlayer.AddListener(activatePlayerCamera);
+        _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerCamera);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -24,5 +28,17 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 cameraRotationHandeler()
     {
         return new( - Input.GetAxis("Mouse Y") * _rotationSpeed, Input.GetAxis("Mouse X") * _rotationSpeed, 0);
+    }
+    void activatePlayerCamera()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        this.enabled = true;
+    }
+    void deactivatePlayerCamera()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        this.enabled = false;
     }
 }
