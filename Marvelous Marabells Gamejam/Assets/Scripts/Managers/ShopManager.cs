@@ -11,17 +11,13 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private GameObject _shopObject;
     [SerializeField] private GameObject _openShopPrompt;
     private Transform _playerTransform;
-    
-    [Header("Stop player from moving")]
-    [SerializeField] private PlayerCamera _playerCamera;
-    [SerializeField] private PlayerMovement _playerMovement;
-    [SerializeField] private PlayerActions _playerActions;
-
+    private Eventcore _eventcore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _playerMoney.currentMoney = _currentMoney;
         _playerTransform = GameObject.FindWithTag("Player").transform;
+        _eventcore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
 
     private void Update()
@@ -31,7 +27,7 @@ public class ShopManager : MonoBehaviour
             if (Input.GetKeyDown(_openShopKeyCode))
             {
                 _shopObject.SetActive(true);
-                deactivatePLayer();
+                _eventcore.UE_DeactivatePlayer.Invoke();
             }
             _openShopPrompt.SetActive(true);
         }
@@ -40,22 +36,8 @@ public class ShopManager : MonoBehaviour
             _openShopPrompt.SetActive(false);
         }
     }
-
-    void deactivatePLayer()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        _playerActions.enabled = false;
-        _playerCamera.enabled = false;
-        _playerMovement.enabled = false;
-    }
-
     public void activatePlayer()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        _playerActions.enabled = true;
-        _playerCamera.enabled = true;
-        _playerMovement.enabled = true;
+        _eventcore.UE_ActivatePlayer.Invoke();
     }
 }

@@ -17,6 +17,10 @@ public class Eventcore : MonoBehaviour
     public UnityEvent<Plants> UE_PickPlant;
     // for when the player makes an action that takes energy
     public UnityEvent<float> UE_UsedEnergy;
+    // stoping the players control over the character
+    public UnityEvent UE_DeactivatePlayer;
+    // returning the players control
+    public UnityEvent UE_ActivatePlayer;
 
     //for in game time
     public UnityEvent<int> UE_TurnOfTheMinute;
