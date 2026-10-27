@@ -5691,6 +5691,7 @@ MonoBehaviour:
   _shopManager: {fileID: 337376330}
   _soldOutText: {fileID: 1880529212}
   _itemCost: 500
+  objectToBuy: {fileID: 138859985507120673}
 --- !u!1 &917075311
 GameObject:
   m_ObjectHideFlags: 0
@@ -6111,6 +6112,7 @@ MonoBehaviour:
   _shopManager: {fileID: 337376330}
   _soldOutText: {fileID: 1370141948}
   _itemCost: 300
+  objectToBuy: {fileID: 138859984742909966}
 --- !u!1 &942214090
 GameObject:
   m_ObjectHideFlags: 0
@@ -11745,7 +11747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &138859985507120673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11763,7 +11765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &767446777731109556
 Transform:
   m_ObjectHideFlags: 0
