@@ -26,6 +26,4 @@ public class ShopButtons : MonoBehaviour
             objectToBuy.SetActive(true);
         _thisButton.enabled = false;
     }
-
-    
 }

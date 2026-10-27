@@ -6,7 +6,10 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [SerializeField] Material grassMaterial;
     [SerializeField] Material tilledMaterial;
     [SerializeField] Material wateredMaterial;
-    
+
+    [Header("For debugging")]
+    [SerializeField] private BreakableItems _blockingItem;
+
     [HideInInspector] public ToolsObject seedPlanted;
     [HideInInspector] public BasePlant growingPlant;
     public toolTypes toolRequired { get; set; }
@@ -27,9 +30,29 @@ public class PlantableSoil : MonoBehaviour, IInteractable
         {
             growingPlant.growSpeed = 1;
         }
+        checkForBlockingItem();
     }
+
+    void checkForBlockingItem()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.up, out hit, 1))
+        {
+            if (hit.collider.GetComponent<BreakableItems>() != null)
+            {
+                _blockingItem = hit.collider.GetComponent<BreakableItems>();
+            }
+        }
+        else
+        {
+            _blockingItem = null;
+        }
+    }
+
     public void Execute(toolTypes usedTool)
     {
+        if (_blockingItem != null)
+            return;
         switch (usedTool)
         {
             case toolTypes.Hoe:

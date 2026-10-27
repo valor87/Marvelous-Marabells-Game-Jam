@@ -503,6 +503,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &81127303
@@ -635,6 +636,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &96221883
@@ -1143,6 +1145,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &187905769
@@ -1663,6 +1666,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &282444273
@@ -3270,6 +3274,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &523631121
@@ -3533,6 +3538,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &602120378
@@ -3665,6 +3671,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &608729824
@@ -3934,6 +3941,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &625274088
@@ -4454,6 +4462,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &708806184
@@ -4551,6 +4560,17 @@ Transform:
   - {fileID: 995643013}
   m_Father: {fileID: 1351192484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715131360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2001319870001923342, guid: 90a5fe46af574084c9f2eb5cbcd5c97e, type: 3}
+  m_PrefabInstance: {fileID: 6267454038331580030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tool
 --- !u!1 &718962063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,6 +4851,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!1 &758718009
@@ -5005,6 +5026,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &759268416
@@ -5692,6 +5714,132 @@ MonoBehaviour:
   _soldOutText: {fileID: 1880529212}
   _itemCost: 500
   objectToBuy: {fileID: 138859985507120673}
+--- !u!1 &895394790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 895394795}
+  - component: {fileID: 895394794}
+  - component: {fileID: 895394793}
+  - component: {fileID: 895394792}
+  - component: {fileID: 895394791}
+  m_Layer: 0
+  m_Name: Rock (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &895394791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895394790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdc4e70072b30044aef241464b1654d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableRocks
+  _toolNeededToDestroy: 5
+--- !u!65 &895394792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895394790}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &895394793
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895394790}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &895394794
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895394790}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &895394795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895394790}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.281, y: -0.91, z: 6.429}
+  m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917075311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5727,6 +5875,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &917075313
@@ -6837,6 +6986,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &1052472885
@@ -7361,6 +7511,132 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000001, y: 0.047391105, z: 0.57880193}
   m_Center: {x: -2.0614828e-11, y: 0.0006917109, z: -0.007909746}
+--- !u!1 &1231260145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231260149}
+  - component: {fileID: 1231260148}
+  - component: {fileID: 1231260147}
+  - component: {fileID: 1231260146}
+  - component: {fileID: 1231260150}
+  m_Layer: 0
+  m_Name: Rock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1231260146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231260145}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1231260147
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231260145}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1231260148
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231260145}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1231260149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231260145}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.315, y: -0.91, z: 7.342}
+  m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231260150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231260145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdc4e70072b30044aef241464b1654d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableRocks
+  _toolNeededToDestroy: 4
 --- !u!1 &1251694719
 GameObject:
   m_ObjectHideFlags: 0
@@ -8487,6 +8763,132 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134e4cc27bd021048a037a5b48e264ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalizeOrientation
+--- !u!1 &1354134786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354134791}
+  - component: {fileID: 1354134790}
+  - component: {fileID: 1354134789}
+  - component: {fileID: 1354134788}
+  - component: {fileID: 1354134787}
+  m_Layer: 0
+  m_Name: Rock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1354134787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354134786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdc4e70072b30044aef241464b1654d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableRocks
+  _toolNeededToDestroy: 4
+--- !u!65 &1354134788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354134786}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1354134789
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354134786}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1354134790
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354134786}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1354134791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354134786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.635, y: -0.91, z: 7.364}
+  m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357578784
 GameObject:
   m_ObjectHideFlags: 0
@@ -9193,8 +9595,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   inventory: 2
   playerTools:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4994126897368642357}
+  - {fileID: 715131360}
   - {fileID: 0}
   playerCrops:
   - {fileID: 0}
@@ -9989,6 +10391,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &1669104118
@@ -10403,6 +10806,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &1873655619
@@ -10999,6 +11403,7 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  _blockingItem: {fileID: 0}
   seedPlanted: {fileID: 0}
   growingPlant: {fileID: 0}
 --- !u!64 &1994073741
@@ -11969,6 +12374,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d337c1e0037c3545891e4d962470486, type: 3}
+--- !u!114 &4994126897368642357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8734488533400604128, guid: fb0d5997ad9a44445a524b142d71d589, type: 3}
+  m_PrefabInstance: {fileID: 3022303199876784156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tool
 --- !u!1001 &6267454038331580030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12053,6 +12469,9 @@ SceneRoots:
   - {fileID: 133725701}
   - {fileID: 1362246370}
   - {fileID: 366452365}
+  - {fileID: 1231260149}
+  - {fileID: 1354134791}
+  - {fileID: 895394795}
   - {fileID: 1351192484}
   - {fileID: 501167057}
   - {fileID: 832575519}
