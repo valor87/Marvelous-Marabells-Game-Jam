@@ -10802,6 +10802,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113270691}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &124280484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2001319870001923342, guid: 90a5fe46af574084c9f2eb5cbcd5c97e, type: 3}
+  m_PrefabInstance: {fileID: 6267454038331580030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tool
+--- !u!1001 &130592150
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2297394921325388876, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_Name
+      value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3982835
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.09979
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
 --- !u!1 &133725700
 GameObject:
   m_ObjectHideFlags: 0
@@ -83152,6 +83232,7 @@ MonoBehaviour:
   _pickPlant: 101
   toolUsedDistance: 5
   _toolHeldPosition: {fileID: 718962064}
+  canUseTool: 0
 --- !u!114 &1451948709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83166,8 +83247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   inventory: 2
   playerTools:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2026463537}
+  - {fileID: 124280484}
   - {fileID: 0}
   playerCrops:
   - {fileID: 0}
@@ -83187,7 +83268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6014db62f6be14489dc461924dfc4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEnergy
-  currentEnergy: 13.4
+  currentEnergy: 100
   maxEnergy: 100
 --- !u!1001 &1453691979
 PrefabInstance:
@@ -111201,3 +111282,4 @@ SceneRoots:
   - {fileID: 953804757}
   - {fileID: 1945251351}
   - {fileID: 1432071018}
+  - {fileID: 130592150}
