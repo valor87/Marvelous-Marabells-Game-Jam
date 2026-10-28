@@ -30,6 +30,7 @@ public class PlayerEnergy : MonoBehaviour
     private void changeEnergy(float amountOfEnergy)
     {
         currentEnergy += amountOfEnergy;
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, 100);
         if (outOfEnergyCheck())
             Debug.Log("the player is out of energy");
     }

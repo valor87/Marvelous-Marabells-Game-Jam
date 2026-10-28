@@ -6,6 +6,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Tool _toolEquiped;
     [SerializeField] private BasePlant _cropEquiped;
     [SerializeField] private PlayerInventory _playerInventory;
+    private PlayerMovement _playerMovement;
 
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
@@ -20,6 +21,7 @@ public class PlayerActions : MonoBehaviour
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
         _eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
         _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerActions);
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -28,6 +30,7 @@ public class PlayerActions : MonoBehaviour
        
         playerInput();
         followPlayer();
+       
     }
     void followPlayer()
     {
