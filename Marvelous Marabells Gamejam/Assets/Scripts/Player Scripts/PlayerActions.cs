@@ -27,10 +27,10 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
-       
+
         playerInput();
         followPlayer();
-       
+
     }
     void followPlayer()
     {
@@ -96,21 +96,34 @@ public class PlayerActions : MonoBehaviour
         IInteractable interaction = null;
         RaycastHit hit;
 
-        if (isArrayFull(_playerInventory.playerCrops))
-            return;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
         {
-            if (hit.collider.GetComponent<IInteractable>() != null)
+            if (hit.collider.GetComponent<IInteractable>() == null)
+                return;
+
+            interaction = hit.collider.GetComponent<IInteractable>();
+
+            if (isArrayFull(_playerInventory.playerCrops) && hit.collider.GetComponent<PickableCrop>() != null)
+                return;
+
+            if (hit.collider.GetComponent<SellBox>() != null)
             {
-                interaction = hit.collider.GetComponent<IInteractable>();
-                Debug.Log("Preforming empty action");
+                hit.collider.GetComponent<SellBox>()._sellingCrop = _cropEquiped;
                 interaction.Execute(toolTypes.None);
+                if (_cropEquiped != null)
+                {
+                    Destroy(_cropEquiped.gameObject);
+                    _playerInventory.playerCrops[Array.IndexOf(_playerInventory.playerCrops, _cropEquiped)] = null;
+                    _eventCore.UE_CropInventoryChange.Invoke();
+                }
             }
+            interaction.Execute(toolTypes.None);
+
         }
     }
 
-    
+
     void hangUpTool()
     {
         RaycastHit hit;
