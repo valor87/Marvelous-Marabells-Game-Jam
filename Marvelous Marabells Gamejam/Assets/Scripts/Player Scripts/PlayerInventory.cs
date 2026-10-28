@@ -12,6 +12,9 @@ public class PlayerInventory : MonoBehaviour
     private Eventcore _eventCore;
     private bool activeInvetoryState;
     private int inventoryIndex;
+
+    [SerializeField] private GameObject _seedPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -144,6 +147,21 @@ public class PlayerInventory : MonoBehaviour
                 playerCrop.deactivateCrop();
             if (playerCrops[inventoryIndex] != null)
                 playerCrops[inventoryIndex].activateCrop();
+        }
+    }
+    public void addSeedBagToInventory(Plants seedBag)
+    {
+        foreach (Tool currentTool in playerTools)
+        {
+            if (currentTool == null)
+            {
+                GameObject createdSeed = Instantiate(_seedPrefab);
+                Debug.Log(seedBag.seedTypes);
+                createdSeed.GetComponent<Tool>().thisSeedType = seedBag.seedTypes;
+                int index = Array.IndexOf(playerTools, currentTool);
+                playerTools[index] = createdSeed.GetComponent<Tool>();
+                return;
+            }
         }
     }
     void addCropToInventory(PickableCrop harvestedPlant)

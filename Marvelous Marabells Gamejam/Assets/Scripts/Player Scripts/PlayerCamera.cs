@@ -26,14 +26,16 @@ public class PlayerCamera : MonoBehaviour
     void Update()
     {
         _cameraTransform.position = transform.position;
-        _cameraTransform.eulerAngles = cameraRotationHandeler();
-        transform.eulerAngles = cameraRotationHandeler();
+
         if (_rotationSpeed == 0)
         {
-            _cameraTransform.eulerAngles = transform.eulerAngles;
+            _cameraTransform.rotation = transform.rotation;
+            return;
         }
+        _cameraTransform.eulerAngles = cameraRotationHandeler();
+        transform.eulerAngles = cameraRotationHandeler();
     }
-    
+
     private Vector3 cameraRotationHandeler()
     {
         float mouseXRotation = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
@@ -43,7 +45,7 @@ public class PlayerCamera : MonoBehaviour
         _yRotation -= mouseYRotation;
 
         _yRotation = Mathf.Clamp(_yRotation, verticalLookLowStop, verticalLookHighStop);
-        return new( _yRotation, _xRotation, 0);
+        return new(_yRotation, _xRotation, 0);
     }
     public float setRotationSpeed(float newSpeed)
     {

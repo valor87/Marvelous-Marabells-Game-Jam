@@ -3,7 +3,7 @@ using UnityEngine;
 public class PickableCrop : MonoBehaviour, IInteractable
 {
     public toolTypes toolRequired { get; set; }
-    [HideInInspector] public Plants thisPlantObejct; 
+    public Plants thisPlantObejct; 
     [HideInInspector] public BasePlant basePlant;
     private Eventcore _eventCore;
     

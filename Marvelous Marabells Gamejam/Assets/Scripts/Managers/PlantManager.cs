@@ -19,11 +19,11 @@ public class PlantManager : MonoBehaviour
         _eventCore.UE_PlantItem.AddListener(startPlantGrowing);
     }
 
-    void startPlantGrowing(ToolsObject desiredPlant, Transform soilTransform)
+    void startPlantGrowing(seedTypes desiredPlant, Transform soilTransform)
     {
         foreach (Plants plant in _allPlants)
         {
-            if (plant.seedTypes == desiredPlant.seedTypes)
+            if (plant.seedTypes == desiredPlant)
             {
                 GameObject _plantObject = Instantiate(plant.plantObject);
                 _plantObject.transform.position = soilTransform.position + Vector3.up;

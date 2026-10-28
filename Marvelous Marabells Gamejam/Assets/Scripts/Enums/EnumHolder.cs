@@ -13,8 +13,12 @@ public enum seedTypes
     None,
     Corn,
     Peas,
+    Carrot,
+    Raddish,
+    Pumpkin,
+    Strawberry,
+    Potato,
 }
-
 public enum activeInventory
 {
     None,

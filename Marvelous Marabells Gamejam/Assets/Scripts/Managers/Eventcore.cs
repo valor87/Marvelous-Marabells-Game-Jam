@@ -16,7 +16,7 @@ public class Eventcore : MonoBehaviour
     //for when the player changes out their item/crop
     public UnityEvent<int> UE_CropChange;
     // for when the player plants something
-    public UnityEvent<ToolsObject, Transform> UE_PlantItem;
+    public UnityEvent<seedTypes, Transform> UE_PlantItem;
     // for when the player harvests plants
     public UnityEvent<PickableCrop> UE_PickPlant;
     // for when the player makes an action that takes energy

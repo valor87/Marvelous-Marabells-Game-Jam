@@ -15,8 +15,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Transform _toolHeldPosition;
 
     [HideInInspector] public bool canUseTool;
-    public float maxWater = 100;
-    public float currentWater = 100;
+    [HideInInspector] public float maxWater = 100;
+    [HideInInspector] public float currentWater = 100;
+
 
     private Eventcore _eventCore;
     private PlayerMovement _playerMovement;
@@ -96,7 +97,7 @@ public class PlayerActions : MonoBehaviour
             }
             if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None)
             {
-                hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisTool);
+                hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisSeedType);
             }
 
             interaction.Execute(_toolEquiped.thisTool.toolType);

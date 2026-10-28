@@ -10,7 +10,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [Header("For debugging")]
     [SerializeField] private BreakableItems _blockingItem;
 
-    [HideInInspector] public ToolsObject seedPlanted;
+    [HideInInspector] public seedTypes seedPlanted;
     [HideInInspector] public BasePlant growingPlant;
     public toolTypes toolRequired { get; set; }
 
@@ -83,7 +83,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
 
     }
 
-    public void plantSeed(ToolsObject seedTool)
+    public void plantSeed(seedTypes seedTool)
     {
         seedPlanted = seedTool;
         transform.GetChild(0).gameObject.SetActive(true);

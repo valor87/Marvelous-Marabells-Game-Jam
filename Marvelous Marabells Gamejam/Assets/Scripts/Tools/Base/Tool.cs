@@ -4,6 +4,7 @@ public class Tool : MonoBehaviour
 {
     public ToolsObject thisTool;
     public Sprite toolImage;
+    public seedTypes thisSeedType;
     [SerializeField] Mesh _toolMesh;
     public float rotationChangeValue;
 

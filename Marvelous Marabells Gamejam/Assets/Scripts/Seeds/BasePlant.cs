@@ -17,6 +17,9 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         transform.localScale = Vector3.zero;
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+
+        _growTime = plants.growDuration;
+        
     }
 
     void Update()
