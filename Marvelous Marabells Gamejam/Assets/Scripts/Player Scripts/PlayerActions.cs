@@ -14,7 +14,7 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] float toolUsedDistance;
     [SerializeField] private Transform _toolHeldPosition;
-
+    [HideInInspector] public bool canUseTool;
     private Eventcore _eventCore;
     void Start()
     {
@@ -48,7 +48,7 @@ public class PlayerActions : MonoBehaviour
             pickPlant();
             preformEmptyHandAction();
         }
-        if (_toolEquiped == null)
+        if (_toolEquiped == null || !canUseTool)
             return;
 
         /////// if the player has a tool in hand//////

@@ -10,6 +10,7 @@ public class DisplayMoney : MonoBehaviour
     [SerializeField] private float _targetAmount;
     [SerializeField] private ShopManager _shopManager;
     private Eventcore _eventCore;
+    private Coroutine _coroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,13 +27,19 @@ public class DisplayMoney : MonoBehaviour
     }
     void spendMoney(int changeAmount)
     {
-        _targetAmount = changeAmount;
-        StartCoroutine(spendMoneyFunctions());
+        _targetAmount -= changeAmount;
+        if (_coroutine == null)
+        {
+            _coroutine = StartCoroutine(spendMoneyFunctions());
+        }
     }
     void gainMoney(int changeAmount)
     {
-        _targetAmount = changeAmount;
-        StartCoroutine(gainMoneyFunctions());
+        _targetAmount += changeAmount;
+        if (_coroutine == null)
+        {
+            _coroutine = StartCoroutine(gainMoneyFunctions());
+        }
     }
     IEnumerator gainMoneyFunctions()
     {
@@ -61,6 +68,7 @@ public class DisplayMoney : MonoBehaviour
             fadeAmount -= 0.005f;
             yield return null;
         }
+        _coroutine = null;
     }
     IEnumerator spendMoneyFunctions()
     {
@@ -74,10 +82,10 @@ public class DisplayMoney : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        while (_targetAmount > 0)
+        while (_targetAmount < 0)
         {
             _shopManager._playerMoney.currentMoney--;
-            _targetAmount--;
+            _targetAmount++;
             yield return new WaitForSeconds(0.01f);
         }
        
@@ -89,5 +97,6 @@ public class DisplayMoney : MonoBehaviour
             fadeAmount -= 0.005f;
             yield return null;
         }
+        _coroutine = null;
     }
 }

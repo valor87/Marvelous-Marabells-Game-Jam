@@ -20,11 +20,11 @@ public class PlayerEnergy : MonoBehaviour
     {
         if (outOfEnergyCheck())
         {
-            _playerActions.enabled = false;
+            _playerActions.canUseTool = false;
         }
         else
         {
-            _playerActions.enabled = true;
+            _playerActions.canUseTool = true;
         }
     }
     private void changeEnergy(float amountOfEnergy)
