@@ -14,6 +14,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [HideInInspector] public BasePlant growingPlant;
     public toolTypes toolRequired { get; set; }
 
+    private ParticleSystem _particalSystem;
     private Eventcore _eventCore;
     private bool _isTilled;
     private bool _isWatered;
@@ -23,6 +24,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     {
         GetComponent<MeshRenderer>().material = grassMaterial;
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _particalSystem = GetComponent<ParticleSystem>();
     }
     void Update()
     {
@@ -57,6 +59,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
         {
             case toolTypes.Hoe:
                 GetComponent<MeshRenderer>().material = tilledMaterial;
+                _particalSystem.Play();
                 Debug.Log("The soid has been tilled");
                 _isTilled = true;
                 break;
