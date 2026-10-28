@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: Assembly-CSharp::Plants
   plantName: Corn
-  seedTypes: 1
   sellAmount: 20
+  growDuration: 5
+  growSpeed: 1
+  plantSprite: {fileID: 21300000, guid: d1e5810fa2e2f434c8e8d90a3ee9a983, type: 3}
+  seedTypes: 1
   plantObject: {fileID: 2297394921325388876, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}

@@ -5,11 +5,11 @@ public class BasePlant : MonoBehaviour, IInteractable
     public float growSpeed;
     public toolTypes toolRequired { get; set; }
     public toolTypes actionRequired = toolTypes.None;
-
+    public Plants plants;
     [SerializeField] private float _growTime;
     [SerializeField] private float _currentGrowTime;
     [SerializeField] private bool _isFertalized;
-    public Plants thisPlantObject;
+    [SerializeField] private GameObject _cropToGrow;
     [HideInInspector] public PlantableSoil soilPlantedOn;
     private bool _fullyGrown;
     private Eventcore _eventCore;
@@ -21,26 +21,44 @@ public class BasePlant : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (_growTime >= _currentGrowTime) {
+        if (_growTime > _currentGrowTime) {
             transform.localScale = (Vector3.one / 2) * (_currentGrowTime / _growTime);
             _currentGrowTime += growSpeed * Time.deltaTime;
         }
 
-        if (_growTime <= _currentGrowTime)
+        if (_growTime < _currentGrowTime)
         {
             _fullyGrown = true;
         }
+
+        if (_fullyGrown) 
+        {
+            growCrop();
+            _fullyGrown = false;
+            _growTime = _currentGrowTime;
+        }
+    }
+
+    void growCrop()
+    {
+        GameObject _tempCrop = Instantiate(_cropToGrow, transform);
+        _tempCrop.GetComponent<PickableCrop>().basePlant = this;
+        _tempCrop.GetComponent<PickableCrop>().thisPlantObejct = plants;
+        _tempCrop.transform.position = transform.position + new Vector3(transform.localScale.x, transform.localScale.y, 0);
     }
 
     public void Execute(toolTypes arg)
     {
-        if (!_fullyGrown)
-            return;
-        Debug.Log($"Destroying {gameObject.name} {thisPlantObject.name}");
-        _eventCore.UE_PickPlant.Invoke(thisPlantObject);
-        Destroy(gameObject);
+        //if (!_fullyGrown)
+        //    return;
+       
+        //Destroy(gameObject);
     }
-
+    public void reGrowPlant()
+    {
+        growCrop();
+        _eventCore.UE_CropInventoryChange.Invoke();
+    }
     public bool checkIfGrown()
     {
         return _fullyGrown;

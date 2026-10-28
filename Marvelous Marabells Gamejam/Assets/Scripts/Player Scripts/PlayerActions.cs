@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     [SerializeField] private Tool _toolEquiped;
-    [SerializeField] private BasePlant _cropEquiped;
+    [SerializeField] private PickableCrop _cropEquiped;
     [SerializeField] private PlayerInventory _playerInventory;
     private PlayerMovement _playerMovement;
 
@@ -45,7 +45,6 @@ public class PlayerActions : MonoBehaviour
         {
             takeDownTools();
             hangUpTool();
-            pickPlant();
             preformEmptyHandAction();
         }
         if (_toolEquiped == null || !canUseTool)
@@ -96,6 +95,10 @@ public class PlayerActions : MonoBehaviour
     {
         IInteractable interaction = null;
         RaycastHit hit;
+
+        if (isArrayFull(_playerInventory.playerCrops))
+            return;
+
         if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
         {
             if (hit.collider.GetComponent<IInteractable>() != null)
@@ -107,20 +110,7 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-    void pickPlant()
-    {
-        IInteractable interaction = null;
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
-        {
-            if (hit.collider.GetComponent<BasePlant>() != null)
-            {
-                Debug.Log($"Crops is {hit.collider.name}");
-                interaction = hit.collider.GetComponent<IInteractable>();
-                interaction.Execute(toolTypes.None);
-            }
-        }
-    }
+    
     void hangUpTool()
     {
         RaycastHit hit;
@@ -168,6 +158,20 @@ public class PlayerActions : MonoBehaviour
             }
         }
     }
+
+    bool isArrayFull<T>(T[] checkingArray)
+    {
+        for (int i = 0; i < checkingArray.Length; i++)
+        {
+            var item = checkingArray[i];
+            if (item == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void useEnergy(float amountOfEnergy)
     {
         _eventCore.UE_UsedEnergy.Invoke(amountOfEnergy);
@@ -178,7 +182,7 @@ public class PlayerActions : MonoBehaviour
         _toolEquiped = newTool;
     }
 
-    public void changeCrop(BasePlant newCrop)
+    public void changeCrop(PickableCrop newCrop)
     {
         _cropEquiped = newCrop;
     }
@@ -187,7 +191,7 @@ public class PlayerActions : MonoBehaviour
     {
         return _toolEquiped;
     }
-    public BasePlant currentlyEquipCrop()
+    public PickableCrop currentlyEquipCrop()
     {
         return _cropEquiped;
     }

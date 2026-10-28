@@ -7,7 +7,7 @@ public class PlayerInventory : MonoBehaviour
     public activeInventory inventory = activeInventory.Tool;
 
     public Tool[] playerTools = new Tool[3];
-    public BasePlant[] playerCrops = new BasePlant[5];
+    public PickableCrop[] playerCrops = new PickableCrop[5];
     private PlayerActions _playerActions;
     private Eventcore _eventCore;
     private bool activeInvetoryState;
@@ -107,7 +107,7 @@ public class PlayerInventory : MonoBehaviour
 
     void changeCrop()
     {
-        BasePlant playerCrop = null;
+        PickableCrop playerCrop = null;
 
         if (Input.mouseScrollDelta.y > 0)
         {
@@ -146,19 +146,19 @@ public class PlayerInventory : MonoBehaviour
                 playerCrops[inventoryIndex].activateCrop();
         }
     }
-    void addCropToInventory(Plants harvestedPlant)
+    void addCropToInventory(PickableCrop harvestedPlant)
     {
-        GameObject inventoryCrop = Instantiate(harvestedPlant.plantObject);
+        GameObject inventoryCrop = Instantiate(harvestedPlant.cropPrefab);
+        inventoryCrop.SetActive(false);
         inventoryCrop.GetComponent<CapsuleCollider>().enabled = false;
-        inventoryCrop.transform.localScale = Vector3.one / 2;
-        inventoryCrop.GetComponent<BasePlant>().setCurrentGrowTime(inventoryCrop.GetComponent<BasePlant>().getGrowTime());
-        foreach (BasePlant currentCrop in playerCrops)
+       
+        foreach (PickableCrop currentCrop in playerCrops)
         {
 
             if (currentCrop == null)
             {
                 int index = Array.IndexOf(playerCrops, currentCrop);
-                playerCrops[index] = inventoryCrop.GetComponent<BasePlant>();
+                playerCrops[index] = inventoryCrop.GetComponent<PickableCrop>();
                 return;
             }
         }

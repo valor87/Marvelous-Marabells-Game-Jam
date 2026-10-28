@@ -10719,10 +10719,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &113270694
 SphereCollider:
@@ -10813,75 +10814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tool
---- !u!1001 &130592150
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2297394921325388876, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_Name
-      value: Core
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.3982835
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.625
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.09979
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
 --- !u!1 &133725700
 GameObject:
   m_ObjectHideFlags: 0
@@ -21473,10 +21405,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &320409736
 SphereCollider:
@@ -22025,10 +21958,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &345837507
 SphereCollider:
@@ -22157,10 +22091,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &348128748
 SphereCollider:
@@ -27844,10 +27779,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &552670390
 SphereCollider:
@@ -59063,10 +58999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &814649881
 SphereCollider:
@@ -64623,10 +64560,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &942214093
 SphereCollider:
@@ -70194,10 +70132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &995643015
 SphereCollider:
@@ -75451,10 +75390,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1076559937
 SphereCollider:
@@ -81124,10 +81064,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1251694722
 SphereCollider:
@@ -81310,6 +81251,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1270774201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2297394921325388876, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_Name
+      value: Core (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2934084
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3999759
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.131406
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060125733004166967, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e421bd26967ae5946a4d1d82f9478f27, type: 3}
 --- !u!1 &1275549723
 GameObject:
   m_ObjectHideFlags: 0
@@ -82460,10 +82458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1357578787
 SphereCollider:
@@ -83578,10 +83577,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1521940017
 SphereCollider:
@@ -83867,10 +83867,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1627609159
 SphereCollider:
@@ -105003,10 +105004,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &1975191202
 SphereCollider:
@@ -110238,10 +110240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &2007817041
 SphereCollider:
@@ -110779,10 +110782,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
   actionRequired: 0
+  plants: {fileID: 0}
   _growTime: 20
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 0}
+  _cropToGrow: {fileID: 0}
   soilPlantedOn: {fileID: 0}
 --- !u!135 &2122468854
 SphereCollider:
@@ -111282,4 +111286,4 @@ SceneRoots:
   - {fileID: 953804757}
   - {fileID: 1945251351}
   - {fileID: 1432071018}
-  - {fileID: 130592150}
+  - {fileID: 1270774201}

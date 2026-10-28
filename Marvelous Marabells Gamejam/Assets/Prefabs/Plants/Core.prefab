@@ -128,8 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasePlant
   growSpeed: 0
+  actionRequired: 0
+  plants: {fileID: 11400000, guid: c7bfc9bc291a5f142969b113760fd42e, type: 2}
   _growTime: 1
   _currentGrowTime: 0
   _isFertalized: 0
-  thisPlantObject: {fileID: 11400000, guid: c7bfc9bc291a5f142969b113760fd42e, type: 2}
+  _cropToGrow: {fileID: 4369242270429476637, guid: 82ae3c6bb541a5841a8ea43f043fdded, type: 3}
   soilPlantedOn: {fileID: 0}
