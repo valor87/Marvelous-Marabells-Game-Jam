@@ -7,12 +7,15 @@ public class SleepingPoint : MonoBehaviour, IInteractable
     public toolTypes actionRequired = toolTypes.None;
     [SerializeField] Transform playersTransform;
     [SerializeField] float totalDuration = 2;
+    [SerializeField] StartBoxFade _boxFade;
     Vector3 playerStartPosition;
 
     Quaternion startRotation;
     Quaternion endRotation;
     bool begin = false;
     float time = 0.0f;
+    float fadeTimer = 0;
+
     public void Execute(toolTypes neededAction)
     {
         startRotation = playersTransform.rotation;
@@ -23,8 +26,8 @@ public class SleepingPoint : MonoBehaviour, IInteractable
         playersTransform.GetComponent<PlayerActions>().enabled = false;
         playersTransform.GetComponent<PlayerMovement>().enabled = false;
         playersTransform.GetComponent<PlayerCamera>().setRotationSpeed(0);
-
         begin = true;
+        fadeTimer = _boxFade.totalWaitTime;
     }
 
     void Update()
@@ -39,7 +42,12 @@ public class SleepingPoint : MonoBehaviour, IInteractable
 
             if (percentComplete >= 0.90f)
             {
-                SceneManager.LoadScene(0);
+                _boxFade.startFade();
+                fadeTimer -= Time.deltaTime;
+                if (fadeTimer < 0)
+                {
+                    SceneManager.LoadScene(0);
+                }
             }
         }
 
