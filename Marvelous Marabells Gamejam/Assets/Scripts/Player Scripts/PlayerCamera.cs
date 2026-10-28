@@ -7,6 +7,11 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [Header("The camera that the player uses")]
     [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private float verticalLookHighStop = 90;
+    [SerializeField] private float verticalLookLowStop = -70;
+
+    float _xRotation;
+    float _yRotation;
 
     private Eventcore _eventCore;
     private void Start()
@@ -21,18 +26,24 @@ public class PlayerCamera : MonoBehaviour
     void Update()
     {
         _cameraTransform.position = transform.position;
-        _cameraTransform.eulerAngles += cameraRotationHandeler();
-        transform.eulerAngles += cameraRotationHandeler();
-
+        _cameraTransform.eulerAngles = cameraRotationHandeler();
+        transform.eulerAngles = cameraRotationHandeler();
         if (_rotationSpeed == 0)
         {
             _cameraTransform.eulerAngles = transform.eulerAngles;
         }
     }
-
+    
     private Vector3 cameraRotationHandeler()
     {
-        return new( - Input.GetAxis("Mouse Y") * _rotationSpeed, Input.GetAxis("Mouse X") * _rotationSpeed, 0);
+        float mouseXRotation = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
+        float mouseYRotation = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
+
+        _xRotation += mouseXRotation;
+        _yRotation -= mouseYRotation;
+
+        _yRotation = Mathf.Clamp(_yRotation, verticalLookLowStop, verticalLookHighStop);
+        return new( _yRotation, _xRotation, 0);
     }
     public float setRotationSpeed(float newSpeed)
     {

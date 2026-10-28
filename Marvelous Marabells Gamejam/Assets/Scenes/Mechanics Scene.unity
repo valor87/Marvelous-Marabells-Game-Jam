@@ -83338,8 +83338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ccf3a6ade57077469d0c6e550d6c413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
-  _rotationSpeed: 5
+  _rotationSpeed: 200
   _cameraTransform: {fileID: 330585546}
+  verticalLookHighStop: 70
+  verticalLookLowStop: -70
 --- !u!114 &1451948708
 MonoBehaviour:
   m_ObjectHideFlags: 0

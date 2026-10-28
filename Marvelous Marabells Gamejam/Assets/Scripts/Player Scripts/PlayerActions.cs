@@ -86,7 +86,6 @@ public class PlayerActions : MonoBehaviour
             }
 
             interaction.Execute(_toolEquiped.thisTool.toolType);
-            Debug.Log("Tool being used correctly");
 
         }
     }
@@ -129,7 +128,6 @@ public class PlayerActions : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
         {
-            Debug.Log("trying to swap tools");
             if (_toolEquiped == null)
             {
                 return;
