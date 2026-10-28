@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class WaterWell : MonoBehaviour
+public class WaterWell : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public toolTypes toolRequired {get; set;}
+
+    private Eventcore _evenCore;
     void Start()
     {
-        
+        _evenCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Execute(toolTypes arg)
     {
-        
+        if (arg == toolTypes.WateringCan)
+        {
+            _evenCore.UE_FillWateringCan.Invoke();
+        }
     }
 }

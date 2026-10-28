@@ -26,6 +26,7 @@ public class Eventcore : MonoBehaviour
     // returning the players control
     public UnityEvent UE_ActivatePlayer;
 
+    public UnityEvent UE_FillWateringCan;
     //for in game time
     public UnityEvent<int> UE_TurnOfTheMinute;
     public UnityEvent<int> UE_TurnOfTheHour;

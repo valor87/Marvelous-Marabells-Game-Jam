@@ -6,7 +6,6 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Tool _toolEquiped;
     [SerializeField] private PickableCrop _cropEquiped;
     [SerializeField] private PlayerInventory _playerInventory;
-    private PlayerMovement _playerMovement;
 
     [SerializeField] private KeyCode _useToolPrimary;
     [SerializeField] private KeyCode _useToolSecondary;
@@ -14,14 +13,22 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] float toolUsedDistance;
     [SerializeField] private Transform _toolHeldPosition;
+
     [HideInInspector] public bool canUseTool;
+    public float maxWater = 100;
+    public float currentWater = 100;
+
     private Eventcore _eventCore;
+    private PlayerMovement _playerMovement;
+
     void Start()
     {
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _playerMovement = GetComponent<PlayerMovement>();
+
         _eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
         _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerActions);
-        _playerMovement = GetComponent<PlayerMovement>();
+        _eventCore.UE_FillWateringCan.AddListener(fillWateringCan);
     }
 
     void Update()
@@ -30,8 +37,8 @@ public class PlayerActions : MonoBehaviour
 
         playerInput();
         followPlayer();
-
     }
+
     void followPlayer()
     {
         if (_toolEquiped != null)
@@ -39,6 +46,7 @@ public class PlayerActions : MonoBehaviour
         if (_cropEquiped != null)
             _cropEquiped.fallowPlayer(_toolHeldPosition);
     }
+
     private void playerInput()
     {
         if (Input.GetKeyDown(_pickPlant))
@@ -56,6 +64,11 @@ public class PlayerActions : MonoBehaviour
             preformToolAction();
             _toolEquiped.useToolPrimary();
             useEnergy(-_toolEquiped.thisTool.energyNeeded);
+
+            if(_toolEquiped.thisTool.toolType == toolTypes.WateringCan)
+            {
+                currentWater -= 5;
+            }
         }
 
         if (Input.GetKeyDown(_useToolSecondary))
@@ -65,6 +78,7 @@ public class PlayerActions : MonoBehaviour
         }
 
     }
+
     void preformToolAction()
     {
         RaycastHit hit;
@@ -122,7 +136,6 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-
     void hangUpTool()
     {
         RaycastHit hit;
@@ -170,19 +183,6 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-    bool isArrayFull<T>(T[] checkingArray)
-    {
-        for (int i = 0; i < checkingArray.Length; i++)
-        {
-            var item = checkingArray[i];
-            if (item == null)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public void useEnergy(float amountOfEnergy)
     {
         _eventCore.UE_UsedEnergy.Invoke(amountOfEnergy);
@@ -206,13 +206,30 @@ public class PlayerActions : MonoBehaviour
     {
         return _cropEquiped;
     }
+    private bool isArrayFull<T>(T[] checkingArray)
+    {
+        for (int i = 0; i < checkingArray.Length; i++)
+        {
+            var item = checkingArray[i];
+            if (item == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
-    void activatePlayerActions()
+    private void activatePlayerActions()
     {
         this.enabled = true;
     }
-    void deactivatePlayerActions()
+    private void deactivatePlayerActions()
     {
         this.enabled = false;
+    }
+
+    private void fillWateringCan()
+    {
+        currentWater = maxWater;
     }
 }
