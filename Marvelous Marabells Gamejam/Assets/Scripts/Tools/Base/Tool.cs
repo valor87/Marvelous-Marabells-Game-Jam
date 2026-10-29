@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering;
 public class Tool : MonoBehaviour
 {
     public ToolsObject thisTool;
@@ -8,15 +9,27 @@ public class Tool : MonoBehaviour
     [SerializeField] Mesh _toolMesh;
     public float rotationChangeValue;
 
-    public virtual void useToolPrimary()
+    [Header("Sound Effects")]
+    [SerializeField] bool _useThisSounds = false;
+    [SerializeField] audioData[] toolSoundEffect = new audioData[0];
+    [SerializeField] AudioManager _audioManager;
+    [HideInInspector] public int _thisDurability = 0;
+    Eventcore _eventCore;
+    private void Start()
     {
-        if (thisTool.consumable)
-        {
-            Destroy(gameObject);
-        }
+        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        _thisDurability = thisTool.durability;
+        _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+    }
+    public virtual void useToolPrimary()
+    {   
 
         StartCoroutine(useHoeAnimation());
-
+        if (_useThisSounds)
+        {
+            int randomNumber = Random.Range(0, toolSoundEffect.Length - 1);
+            _audioManager.playerSound(toolSoundEffect[randomNumber].ac, toolSoundEffect[randomNumber].voloume);
+        }
         Debug.Log($"Tools {gameObject.name} primary has been used");
     }
 
@@ -49,7 +62,7 @@ public class Tool : MonoBehaviour
         transform.position = _playerTransform.position;
         transform.eulerAngles = _playerTransform.eulerAngles;
     }
-   
+
     IEnumerator useHoeAnimation()
     {
         float rotationValue = 0;

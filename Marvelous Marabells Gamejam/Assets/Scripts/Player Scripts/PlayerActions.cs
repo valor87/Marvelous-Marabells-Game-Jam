@@ -98,6 +98,16 @@ public class PlayerActions : MonoBehaviour
             if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None)
             {
                 hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisSeedType);
+                if (_toolEquiped.thisTool.consumable)
+                {
+                    _toolEquiped._thisDurability--;
+                    if (_toolEquiped._thisDurability == 0)
+                    {
+                        _playerInventory.playerTools[Array.IndexOf(_playerInventory.playerTools, _toolEquiped)] = null;
+                        _eventCore.UE_ToolInventoryChange.Invoke();
+                        Destroy(_toolEquiped.gameObject);
+                    }
+                }
             }
 
             interaction.Execute(_toolEquiped.thisTool.toolType);
