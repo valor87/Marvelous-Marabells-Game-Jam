@@ -7,6 +7,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [Header("The camera that the player uses")]
     [SerializeField] private Transform _cameraTransform;
+    public Vector3 _cameraPosOffest;
     [SerializeField] private float verticalLookHighStop = 90;
     [SerializeField] private float verticalLookLowStop = -70;
 
@@ -25,7 +26,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-        _cameraTransform.position = transform.position;
+        _cameraTransform.position = transform.position + _cameraPosOffest;
 
         if (_rotationSpeed == 0)
         {

@@ -21,12 +21,14 @@ public class PlayerActions : MonoBehaviour
 
     private Eventcore _eventCore;
     private PlayerMovement _playerMovement;
+    private PlayerCamera _playerCamera;
 
     void Start()
     {
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _playerCamera = GetComponent<PlayerCamera>();
         _playerMovement = GetComponent<PlayerMovement>();
-
+        
         _eventCore.UE_ActivatePlayer.AddListener(activatePlayerActions);
         _eventCore.UE_DeactivatePlayer.AddListener(deactivatePlayerActions);
         _eventCore.UE_FillWateringCan.AddListener(fillWateringCan);
@@ -34,7 +36,7 @@ public class PlayerActions : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * toolUsedDistance, Color.purple);
+        Debug.DrawRay(transform.position + _playerCamera._cameraPosOffest, transform.forward * toolUsedDistance, Color.purple);
 
         playerInput();
         followPlayer();
@@ -83,7 +85,7 @@ public class PlayerActions : MonoBehaviour
     void preformToolAction()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        if (Physics.Raycast(transform.position + _playerCamera._cameraPosOffest, transform.forward, out hit, toolUsedDistance))
         {
             IInteractable interaction = null;
 
@@ -121,7 +123,7 @@ public class PlayerActions : MonoBehaviour
         RaycastHit hit;
 
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        if (Physics.Raycast(transform.position + _playerCamera._cameraPosOffest, transform.forward, out hit, toolUsedDistance))
         {
             if (hit.collider.GetComponent<IInteractable>() == null)
                 return;
@@ -150,7 +152,7 @@ public class PlayerActions : MonoBehaviour
     void hangUpTool()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        if (Physics.Raycast(transform.position + _playerCamera._cameraPosOffest, transform.forward, out hit, toolUsedDistance))
         {
             if (_toolEquiped == null)
             {
@@ -172,7 +174,7 @@ public class PlayerActions : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, toolUsedDistance))
+        if (Physics.Raycast(transform.position + _playerCamera._cameraPosOffest, transform.forward, out hit, toolUsedDistance))
         {
             if (hit.collider.GetComponent<ToolBoardTool>() != null)
             {
