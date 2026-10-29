@@ -7,6 +7,7 @@ public class Plants : ScriptableObject
     public int sellAmount;
     public float growDuration;
     public float growSpeed;
+    public bool reGrow = false;
     public Sprite plantSprite;
 
     public seedTypes seedTypes;

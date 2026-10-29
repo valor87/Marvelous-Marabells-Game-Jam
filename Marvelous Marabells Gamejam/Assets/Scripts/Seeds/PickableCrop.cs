@@ -11,6 +11,8 @@ public class PickableCrop : MonoBehaviour, IInteractable
     [SerializeField] private float _growDuration;
     [SerializeField] private float _currentGrowTime;
     [SerializeField] private int _cropSellPrice;
+    [SerializeField] private bool _reGrow;
+
     public GameObject cropPrefab;
 
     private Vector3 startScale = Vector3.zero;
@@ -22,6 +24,7 @@ public class PickableCrop : MonoBehaviour, IInteractable
         _growSpeed = thisPlantObejct.growSpeed;
         _growDuration = thisPlantObejct.growDuration;
         _cropSellPrice = thisPlantObejct.sellAmount;
+        _reGrow = thisPlantObejct.reGrow;
     }
 
     // Update is called once per frame
@@ -40,6 +43,16 @@ public class PickableCrop : MonoBehaviour, IInteractable
         _eventCore.UE_PickPlant.Invoke(this);
         basePlant.reGrowPlant();
         Destroy(gameObject);
+        if (_reGrow)
+        {
+            basePlant.reGrowPlant();
+        }
+        else
+        {
+            basePlant.destroyThisCrop(); ;
+        }
+        
+            Destroy(gameObject);
     }
 
     public void fallowPlayer(Transform _playerTransform)

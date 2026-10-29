@@ -19,12 +19,13 @@ public class BasePlant : MonoBehaviour, IInteractable
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
 
         _growTime = plants.growDuration;
-        
+
     }
 
     void Update()
     {
-        if (_growTime > _currentGrowTime) {
+        if (_growTime > _currentGrowTime)
+        {
             transform.localScale = (Vector3.one / 2) * (_currentGrowTime / _growTime);
             _currentGrowTime += growSpeed * Time.deltaTime;
         }
@@ -34,7 +35,7 @@ public class BasePlant : MonoBehaviour, IInteractable
             _fullyGrown = true;
         }
 
-        if (_fullyGrown) 
+        if (_fullyGrown)
         {
             growCrop();
             _fullyGrown = false;
@@ -54,8 +55,19 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         //if (!_fullyGrown)
         //    return;
-       
+
         //Destroy(gameObject);
+    }
+    // i get it these functions are pee and poo
+    public void destroyThisCrop()
+    {
+        soilPlantedOn.clearSoil();
+        Destroy(gameObject);
+    }
+    // i dont feel like making it better 
+    public void destroyOnlyCrop()
+    {
+        Destroy(gameObject);
     }
     public void reGrowPlant()
     {
