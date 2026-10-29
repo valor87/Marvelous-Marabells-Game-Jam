@@ -617,6 +617,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -5555,6 +5563,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -10957,6 +10973,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -16009,6 +16033,148 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191508541}
   m_CullTransparentMesh: 1
+--- !u!1 &227699044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227699046}
+  - component: {fileID: 227699045}
+  - component: {fileID: 227699047}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &227699045
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.5
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &227699046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227699047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b42fdcf6b25e747a9350d332991842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1 &229775577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16471,6 +16637,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -22558,6 +22732,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 11400000, guid: e2cc199e5940a5b49b2f69c5d6742996, type: 2}
   playerInventroy: {fileID: 1451948709}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!114 &367407064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23280,6 +23458,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -28765,6 +28951,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -33703,6 +33897,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -38890,6 +39092,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -44490,6 +44700,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -49749,6 +49967,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -54729,6 +54955,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -60305,6 +60539,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859985507120673}
   buyingPlant: {fileID: 0}
   playerInventroy: {fileID: 0}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!1 &870022991
 GameObject:
   m_ObjectHideFlags: 0
@@ -60569,6 +60807,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -65761,6 +66007,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 0}
   playerInventroy: {fileID: 0}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!1 &942214090
 GameObject:
   m_ObjectHideFlags: 0
@@ -65973,6 +66223,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableItems
   _toolNeededToDestroy: 4
+  breakingSoundEffect:
+  - ac: {fileID: 8300000, guid: 82e3ae7f31d8a674c99036034ea67f4c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!65 &960673233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71715,6 +71969,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -76676,6 +76938,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 11400000, guid: 2e37b3609c1e3e74aaf9fab7907819f1, type: 2}
   playerInventroy: {fileID: 1451948709}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!114 &1061301985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78095,6 +78361,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableItems
   _toolNeededToDestroy: 4
+  breakingSoundEffect:
+  - ac: {fileID: 8300000, guid: 82e3ae7f31d8a674c99036034ea67f4c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!198 &1231260151
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -85272,6 +85542,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 11400000, guid: af868b90ea8441741994bee0cd8dd6ba, type: 2}
   playerInventroy: {fileID: 1451948709}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!114 &1411469683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85973,6 +86247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35645ba5d565d34fadfed60dfa419ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SellBox
+  sellingSoundEffect:
+  - ac: {fileID: 8300000, guid: c487cb3d2c6db20419e694816152a937, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _sellingCrop: {fileID: 0}
 --- !u!1 &1449588801
 GameObject:
@@ -86392,7 +86670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   inventory: 2
   playerTools:
-  - {fileID: 2026463537}
+  - {fileID: 0}
   - {fileID: 124280484}
   - {fileID: 0}
   playerCrops:
@@ -87657,6 +87935,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -92694,6 +92980,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 11400000, guid: 5b0f9dff674490142ba583e5c59a6df8, type: 2}
   playerInventroy: {fileID: 1451948709}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!114 &1725215714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92848,6 +93138,10 @@ MonoBehaviour:
   objectToBuy: {fileID: 138859984742909966}
   buyingPlant: {fileID: 11400000, guid: 6854a1f8d122a5a479b807a57583fe61, type: 2}
   playerInventroy: {fileID: 1451948709}
+  buyingSoundEffect:
+  - ac: {fileID: 8300000, guid: 9203500b12e39e448b1e6e49ed3c509b, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!114 &1761532861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93562,6 +93856,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -98574,6 +98876,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableItems
   _toolNeededToDestroy: 4
+  breakingSoundEffect:
+  - ac: {fileID: 8300000, guid: 82e3ae7f31d8a674c99036034ea67f4c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!65 &1882427912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104081,6 +104387,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableItems
   _toolNeededToDestroy: 5
+  breakingSoundEffect:
+  - ac: {fileID: 8300000, guid: 82e3ae7f31d8a674c99036034ea67f4c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
 --- !u!65 &1952602279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109622,6 +109932,14 @@ MonoBehaviour:
   grassMaterial: {fileID: 2100000, guid: 6c046dfd439f9334a9d4056d46dca35f, type: 2}
   tilledMaterial: {fileID: 2100000, guid: f002a9316c38b7c4e9632a2f114d8228, type: 2}
   wateredMaterial: {fileID: 2100000, guid: bedb119fc95002c4499999a59f2a6f71, type: 2}
+  tillingSoundEffect:
+  - ac: {fileID: 8300000, guid: 6b316d6ee8ff1f84398017d906cd4d3e, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 15e10cfe5110976498db21a46f53fcc9, type: 3}
+    voloume: 1
+  - ac: {fileID: 8300000, guid: 50df73346c46bb840a7ab66647ace22c, type: 3}
+    voloume: 1
+  _audioManager: {fileID: 227699047}
   _blockingItem: {fileID: 0}
   seedPlanted: 0
   growingPlant: {fileID: 0}
@@ -114777,17 +115095,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2026463537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3746621644906823772, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-  m_PrefabInstance: {fileID: 5382864092935591882}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2806077dcfd26ee40a99f6d27e1d5c00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tool
 --- !u!1 &2068792143
 GameObject:
   m_ObjectHideFlags: 0
@@ -115635,63 +115942,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d337c1e0037c3545891e4d962470486, type: 3}
---- !u!1001 &5382864092935591882
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6919893321863656528, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_Name
-      value: SeedBag
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.475
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.637
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147662196704577974, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c35cf70d79a153840a5d88924b052fed, type: 3}
 --- !u!1001 &6267454038331580030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115770,7 +116020,6 @@ SceneRoots:
   - {fileID: 6267454038331580030}
   - {fileID: 3022303199876784156}
   - {fileID: 3016300671577682403}
-  - {fileID: 5382864092935591882}
   - {fileID: 2025887747}
   - {fileID: 1447613937}
   - {fileID: 337376329}
@@ -115802,3 +116051,4 @@ SceneRoots:
   - {fileID: 1945251351}
   - {fileID: 1432071018}
   - {fileID: 1270774201}
+  - {fileID: 227699046}

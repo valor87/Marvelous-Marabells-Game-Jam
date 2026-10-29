@@ -7,6 +7,10 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     [SerializeField] Material tilledMaterial;
     [SerializeField] Material wateredMaterial;
 
+    [Header("Sound Effects")]
+    [SerializeField] audioData[] tillingSoundEffect = new audioData[0];
+    [SerializeField] AudioManager _audioManager;
+
     [Header("For debugging")]
     [SerializeField] private BreakableItems _blockingItem;
 
@@ -60,6 +64,8 @@ public class PlantableSoil : MonoBehaviour, IInteractable
             case toolTypes.Hoe:
                 GetComponent<MeshRenderer>().material = tilledMaterial;
                 _particalSystem.Play();
+                int randomNumber = Random.Range(0, tillingSoundEffect.Length - 1);
+                _audioManager.playerSound(tillingSoundEffect[randomNumber].ac, tillingSoundEffect[randomNumber].voloume);
                 Debug.Log("The soid has been tilled");
                 _isTilled = true;
                 break;
@@ -76,6 +82,8 @@ public class PlantableSoil : MonoBehaviour, IInteractable
             case toolTypes.Seeds:
                 if (!_isTilled)
                     return;
+                int randomNumber2 = Random.Range(0, tillingSoundEffect.Length - 1);
+                _audioManager.playerSound(tillingSoundEffect[randomNumber2].ac, tillingSoundEffect[randomNumber2].voloume);
                 _eventCore.UE_PlantItem.Invoke(seedPlanted, transform);
                 _isPlanted = true;
                 break;
