@@ -24,8 +24,12 @@ public class BreakableItems : MonoBehaviour, IInteractable
             int randomNumber = Random.Range(0, breakingSoundEffect.Length - 1);
             _audioManager.playerSound(breakingSoundEffect[randomNumber].ac, breakingSoundEffect[randomNumber].voloume);
             _particleSystem.Play();
-            GetComponent<MeshRenderer>().enabled = false;
             GetComponent<BoxCollider>().enabled = false;
+
+            for(int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 }

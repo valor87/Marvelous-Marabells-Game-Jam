@@ -66,16 +66,14 @@ public class PlantableSoil : MonoBehaviour, IInteractable
                 _particalSystem.Play();
                 int randomNumber = Random.Range(0, tillingSoundEffect.Length - 1);
                 _audioManager.playerSound(tillingSoundEffect[randomNumber].ac, tillingSoundEffect[randomNumber].voloume);
-                Debug.Log("The soid has been tilled");
+                _isWatered = false;
                 _isTilled = true;
                 break;
             case toolTypes.WateringCan:
                 if (!_isTilled)
                 {
-                    Debug.Log("Till the land first");
                     return;
                 }
-                Debug.Log("The land has been watered");
                 GetComponent<MeshRenderer>().material = wateredMaterial;
                 _isWatered = true;
                 break;
@@ -87,10 +85,23 @@ public class PlantableSoil : MonoBehaviour, IInteractable
                 _eventCore.UE_PlantItem.Invoke(seedPlanted, transform);
                 _isPlanted = true;
                 break;
+            case toolTypes.Axe:
+                clearSoil();
+                break;
         }
 
     }
 
+    public void clearSoil()
+    {
+        _isTilled = false;
+        _isWatered = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        GetComponent<MeshRenderer>().material = grassMaterial;
+
+        if (growingPlant != null)
+            growingPlant.destroyOnlyCrop();
+    }
     public void plantSeed(seedTypes seedTool)
     {
         seedPlanted = seedTool;
