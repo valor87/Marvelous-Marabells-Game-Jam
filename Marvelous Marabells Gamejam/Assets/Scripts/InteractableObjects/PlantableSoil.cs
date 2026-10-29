@@ -20,7 +20,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
 
     private ParticleSystem _particalSystem;
     private Eventcore _eventCore;
-    private bool _isTilled;
+    [HideInInspector] public bool _isTilled;
     private bool _isWatered;
     private bool _isPlanted;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

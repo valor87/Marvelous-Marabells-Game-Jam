@@ -97,7 +97,8 @@ public class PlayerActions : MonoBehaviour
             {
                 return;
             }
-            if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None)
+            if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None
+                && hit.collider.GetComponent<PlantableSoil>()._isTilled)
             {
                 hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisSeedType);
                 if (_toolEquiped.thisTool.consumable)
