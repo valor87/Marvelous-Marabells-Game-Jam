@@ -318187,6 +318187,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 138.2327
       objectReference: {fileID: 0}
+    - target: {fileID: 2065867924042106203, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_text
+      value: 'Pumpkin
+
+        Can be planted and grown.
+
+        Cost: 40'
+      objectReference: {fileID: 0}
     - target: {fileID: 2287254618361782082, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: _shopManager
       value: 
