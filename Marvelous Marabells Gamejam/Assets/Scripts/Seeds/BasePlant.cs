@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.GPUSort;
 
 public class BasePlant : MonoBehaviour, IInteractable
 {
@@ -10,7 +11,11 @@ public class BasePlant : MonoBehaviour, IInteractable
     [SerializeField] private float _currentGrowTime;
     [SerializeField] private bool _isFertalized;
     [SerializeField] private GameObject _cropToGrow;
+    [SerializeField] private Vector3 _finalGrowSize = Vector3.one;
     [HideInInspector] public PlantableSoil soilPlantedOn;
+
+    public bool oneTimeGrow = false;
+    [SerializeField] private PickableCrop _PickableCrop;
     private bool _fullyGrown;
     private Eventcore _eventCore;
     void Start()
@@ -26,7 +31,7 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         if (_growTime > _currentGrowTime)
         {
-            transform.localScale = (Vector3.one / 2) * (_currentGrowTime / _growTime);
+            transform.localScale = (_finalGrowSize / 2) * (_currentGrowTime / _growTime);
             _currentGrowTime += growSpeed * Time.deltaTime;
         }
 
@@ -35,7 +40,7 @@ public class BasePlant : MonoBehaviour, IInteractable
             _fullyGrown = true;
         }
 
-        if (_fullyGrown)
+        if (_fullyGrown && !oneTimeGrow)
         {
             growCrop();
             _fullyGrown = false;
@@ -51,12 +56,18 @@ public class BasePlant : MonoBehaviour, IInteractable
         _tempCrop.transform.position = transform.position + new Vector3(transform.localScale.x, transform.localScale.y, 0);
     }
 
-    public void Execute(toolTypes arg)
+    public void Execute(toolTypes args)
     {
-        //if (!_fullyGrown)
-        //    return;
+        if (args != toolTypes.None && _fullyGrown)
+            return;
+        GameObject copyCrop = Instantiate(_cropToGrow, transform);
+        copyCrop.SetActive(false);
+        copyCrop.GetComponent<PickableCrop>().basePlant = this;
+        copyCrop.GetComponent<PickableCrop>().thisPlantObejct = plants;
+        _eventCore.UE_PickPlant.Invoke(copyCrop.GetComponent<PickableCrop>());
 
-        //Destroy(gameObject);
+        destroyThisCrop();
+        Destroy(copyCrop);
     }
     // i get it these functions are pee and poo
     public void destroyThisCrop()
