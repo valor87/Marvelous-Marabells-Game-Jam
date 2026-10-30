@@ -17547,6 +17547,7 @@ MonoBehaviour:
   _stoneQouta: {fileID: 1792140214}
   _costQouta: {fileID: 300051782}
   _endGameButton: {fileID: 818047272}
+  _FadeBox: {fileID: 2108254466}
   _playerProgress: {fileID: 11400000, guid: 4c355ad5edfea93409a929c45701ceb7, type: 2}
 --- !u!1001 &76459866
 PrefabInstance:
@@ -318107,6 +318108,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1045628558935430934, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f432fc8c5bb6f34e83430295a2f7e88, type: 3}
+    - target: {fileID: 1045628558935430934, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045628558935430934, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045628558935430934, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1046147951641794800, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: objectToBuy
       value: 
@@ -318358,6 +318375,22 @@ PrefabInstance:
     - target: {fileID: 5743068539343665461, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -99.70532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093647958947101993, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3765008500350e64e8e4ca8f81f530b7, type: 3}
+    - target: {fileID: 6093647958947101993, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093647958947101993, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093647958947101993, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160182793158690011, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -372614,7 +372647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818047273}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 71784815}
+        m_TargetAssemblyTypeName: EndGameRequirementsUI, Assembly-CSharp
+        m_MethodName: endGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &818047273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629274,7 +629319,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2108254465}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba49595dc1c0fde4d86c1ef212ee124f, type: 3}
   m_Name: 
@@ -881912,6 +881957,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1895071549}
     m_Modifications:
+    - target: {fileID: 3410212606247573191, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5221814674868946177, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -881992,6 +882041,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7098415575435517638, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8222246617687766826, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
       propertyPath: m_Name
       value: ___Fade Box___
@@ -882001,6 +882054,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
+--- !u!114 &2108254466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 396919585474349439, guid: 53f5846f5a389d245aba702f4bfd33b5, type: 3}
+  m_PrefabInstance: {fileID: 2108254465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &2111946215
 GameObject:
   m_ObjectHideFlags: 0

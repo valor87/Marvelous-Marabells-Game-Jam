@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndGameRequirementsUI : MonoBehaviour
@@ -14,7 +15,11 @@ public class EndGameRequirementsUI : MonoBehaviour
 
     [SerializeField] private Button _endGameButton;
 
+    [SerializeField] private Image _FadeBox;
+
     [SerializeField] private playerProgress _playerProgress;
+
+    private FadeScript _fadeScript = new FadeScript();
     void displayInformation()
     {
         _woodQouta.text = $"Wood: {_playerProgress.playerWoodMaterials}/{_woodQoutaNumber}";
@@ -36,5 +41,16 @@ public class EndGameRequirementsUI : MonoBehaviour
     {
         displayInformation();
         activateButton();
+
+        if (_fadeScript.fadeComplete)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void endGame()
+    {
+        Debug.Log("button hit");
+        StartCoroutine(_fadeScript.fadeFunctionUI(_FadeBox, Color.black));
     }
 }

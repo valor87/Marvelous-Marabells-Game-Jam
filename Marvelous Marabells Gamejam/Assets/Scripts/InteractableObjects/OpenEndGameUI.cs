@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenEndGameUI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class OpenEndGameUI : MonoBehaviour
     private Transform _playerTransform;
     private Eventcore _eventcore;
     private bool _interactImageOff = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,9 @@ public class OpenEndGameUI : MonoBehaviour
             _interactImageOff = true;
             _openPrompt.SetActive(false);
         }
+
+       
     }
 
+   
 }
