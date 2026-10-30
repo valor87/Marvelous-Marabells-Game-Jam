@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     private int currentHour;
     private int currentMinute;
     public float currentSecond;
-
+    public float slowDownTime = 100;
     private Eventcore _eventCore;
     private timePeriod _timePeriod;
 
@@ -68,5 +68,9 @@ public class TimeManager : MonoBehaviour
         {
             _timePeriod = timePeriod.PM;
         }
+    }
+    public void slowTime()
+    {
+        timePassing = slowDownTime;
     }
 }

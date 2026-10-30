@@ -11,6 +11,8 @@ public class ShopButtons : MonoBehaviour
     [SerializeField] private Plants buyingPlant;
     [SerializeField] private PlayerInventory playerInventroy;
     [SerializeField] private playerProgress _playerProgress;
+    [SerializeField] private TimeManager _timeManager;
+
     [Header("Sound Effects")]
     [SerializeField] audioData[] buyingSoundEffect = new audioData[0];
     [SerializeField] AudioManager _audioManager;
@@ -64,7 +66,18 @@ public class ShopButtons : MonoBehaviour
         _soldOutText.SetActive(true);
         if(objectToBuy != null)
             objectToBuy.SetActive(true);
-        _thisButton.enabled = false;
+        _thisButton.interactable = false;
+    }
+    public void processTimeSlow()
+    {
+        if (_shopManager._playerMoney.currentMoney < _itemCost)
+            return;
+        _timeManager.slowTime();
+        _eventCore.UE_PurchasedItem.Invoke(_itemCost);
+        int randomNumber = Random.Range(0, buyingSoundEffect.Length - 1);
+        _audioManager.playerSound(buyingSoundEffect[randomNumber].ac, buyingSoundEffect[randomNumber].voloume);
+        _thisButton.interactable = false;
+        _soldOutText.SetActive(true);
     }
     private bool isArrayFull<T>(T[] checkingArray)
     {
