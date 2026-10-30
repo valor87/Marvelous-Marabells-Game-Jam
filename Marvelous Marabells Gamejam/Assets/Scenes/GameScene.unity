@@ -58734,6 +58734,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 622895118}
     m_Modifications:
+    - target: {fileID: 5861013457385159444, guid: f74561637d38aa94eb80034864b80b95, type: 3}
+      propertyPath: timePassing
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861013457385159444, guid: f74561637d38aa94eb80034864b80b95, type: 3}
+      propertyPath: startingHour
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861013457385159444, guid: f74561637d38aa94eb80034864b80b95, type: 3}
+      propertyPath: startingMinute
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7156139620739250273, guid: f74561637d38aa94eb80034864b80b95, type: 3}
       propertyPath: m_Name
       value: TimeManager
@@ -297292,7 +297304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.82
+      value: 1.492
       objectReference: {fileID: 0}
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -318108,6 +318120,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 689086324}
     - target: {fileID: 1046147951641794800, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: _playerProgress
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c355ad5edfea93409a929c45701ceb7, type: 2}
+    - target: {fileID: 1046147951641794800, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: playerInventroy
       value: 
       objectReference: {fileID: 1167539770}
@@ -318295,6 +318311,10 @@ PrefabInstance:
       propertyPath: _audioManager
       value: 
       objectReference: {fileID: 689086324}
+    - target: {fileID: 4950655868023539615, guid: 86bd419390462a34bac085f441bc2523, type: 3}
+      propertyPath: _playerProgress
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c355ad5edfea93409a929c45701ceb7, type: 2}
     - target: {fileID: 4950655868023539615, guid: 86bd419390462a34bac085f441bc2523, type: 3}
       propertyPath: playerInventroy
       value: 
@@ -430433,7 +430453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b9600f2830e83468167208f250ee99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  _currentMoney: 500
+  _currentMoney: 0
   _triggerDistence: 3
   _openShopKeyCode: 101
   _shopObject: {fileID: 1425524615}
@@ -819740,7 +819760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51788616
+      value: -2.28
       objectReference: {fileID: 0}
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -819748,7 +819768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.960897
+      value: -8.93
       objectReference: {fileID: 0}
     - target: {fileID: 6139019456063913146, guid: 138e9482797059e4d9bb3b6c9eba57ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -855804,6 +855824,18 @@ PrefabInstance:
       propertyPath: _playerInventory
       value: 
       objectReference: {fileID: 1167539770}
+    - target: {fileID: 2026431043430039783, guid: 5052de3e2ba91714ca2f687a36b766e1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0510119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026431043430039783, guid: 5052de3e2ba91714ca2f687a36b766e1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0510119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026431043430039783, guid: 5052de3e2ba91714ca2f687a36b766e1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0510119
+      objectReference: {fileID: 0}
     - target: {fileID: 2711071940960888789, guid: 5052de3e2ba91714ca2f687a36b766e1, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -29,10 +29,10 @@ public class ShopManager : MonoBehaviour
             if (Input.GetKeyDown(_openShopKeyCode))
             {
                 _shopObject.SetActive(true);
-                _interactImageOff = false;
                 _eventcore.UE_DeactivatePlayer.Invoke();
             }
             _openShopPrompt.SetActive(true);
+            _interactImageOff = false;
         }
         else if(Vector3.Distance(transform.position, _playerTransform.position) > _triggerDistence && !_interactImageOff)
         {

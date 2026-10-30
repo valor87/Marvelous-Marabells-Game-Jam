@@ -10,7 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public PickableCrop[] playerCrops = new PickableCrop[5];
     private PlayerActions _playerActions;
     private Eventcore _eventCore;
-    private bool activeInvetoryState;
+    private bool activeInvetoryState = true;
     private int inventoryIndex;
 
     [SerializeField] private GameObject _seedPrefab;
@@ -29,7 +29,7 @@ public class PlayerInventory : MonoBehaviour
         changeInventory();
         if (inventory == activeInventory.Tool)
             changeTool();
-        if(inventory == activeInventory.Crop)
+        if (inventory == activeInventory.Crop)
             changeCrop();
     }
 
@@ -37,12 +37,12 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-
-            if(playerCrops[inventoryIndex] != null)
+            if (playerCrops[inventoryIndex] != null)
                 playerCrops[inventoryIndex].deactivateCrop();
-            if (playerTools[inventoryIndex] != null)
+            if (playerTools[Mathf.Clamp(inventoryIndex, 0, playerTools.Length - 1)] != null)
+            {
                 playerTools[inventoryIndex].deactivateTool();
-
+            }
             inventoryIndex = 0;
 
             switch (activeInvetoryState)
@@ -79,12 +79,12 @@ public class PlayerInventory : MonoBehaviour
                 inventoryIndex = 0;
 
             _eventCore.UE_ToolChange.Invoke(inventoryIndex);
-           
+
             _playerActions.changeTool(playerTools[inventoryIndex]);
 
             if (playerTool != null)
                 playerTool.deactivateTool();
-            if(playerTools[inventoryIndex] != null)
+            if (playerTools[inventoryIndex] != null)
                 playerTools[inventoryIndex].activateTool();
         }
 
@@ -98,7 +98,7 @@ public class PlayerInventory : MonoBehaviour
                 inventoryIndex = playerTools.Length - 1;
 
             _eventCore.UE_ToolChange.Invoke(inventoryIndex);
-           
+
             _playerActions.changeTool(playerTools[inventoryIndex]);
 
             if (playerTool != null)
@@ -169,7 +169,7 @@ public class PlayerInventory : MonoBehaviour
         GameObject inventoryCrop = Instantiate(harvestedPlant.cropPrefab);
         inventoryCrop.SetActive(false);
         inventoryCrop.GetComponent<CapsuleCollider>().enabled = false;
-       
+
         foreach (PickableCrop currentCrop in playerCrops)
         {
 
