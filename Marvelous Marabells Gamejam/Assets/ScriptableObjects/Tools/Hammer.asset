@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Hammer
-  energyNeeded: 10
+  energyNeeded: 5
   toolType: 4
   twoHanded: 0
   consumable: 0

@@ -15,7 +15,7 @@ public class PickableCrop : MonoBehaviour, IInteractable
     public GameObject cropPrefab;
 
     private Vector3 startScale = Vector3.zero;
-    private Vector3 endScale = Vector3.one;
+    [SerializeField] private Vector3 endScale = Vector3.one;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
