@@ -135,3 +135,5 @@ MonoBehaviour:
   _isFertalized: 0
   _cropToGrow: {fileID: 4369242270429476637, guid: 82ae3c6bb541a5841a8ea43f043fdded, type: 3}
   soilPlantedOn: {fileID: 0}
+  oneTimeGrow: 1
+  _PickableCrop: {fileID: 0}
