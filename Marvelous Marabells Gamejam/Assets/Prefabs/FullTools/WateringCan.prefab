@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   thisTool: {fileID: 11400000, guid: 10af32c00d9eb034b9f1726b688d6946, type: 2}
-  toolImage: {fileID: 21300000, guid: 7ad4525e137a2d940b2ffa164bb1089b, type: 3}
+  toolImage: {fileID: 21300000, guid: 63be7cd1a1faebd44962fb1843ed78ab, type: 3}
   thisSeedType: 0
   _toolMesh: {fileID: -5495902117074765545, guid: 06f62f1966153c9439fcac24af0ef722, type: 3}
   rotationChangeValue: 500
