@@ -7,7 +7,7 @@ public class BreakableItems : MonoBehaviour, IInteractable
     [Header("Sound Effects")]
     [SerializeField] audioData[] breakingSoundEffect = new audioData[0];
     [SerializeField] AudioManager _audioManager;
-
+    [SerializeField] Eventcore _eventcore;
     public toolTypes toolRequired { get; set; }
     private ParticleSystem _particleSystem;
     
@@ -25,7 +25,7 @@ public class BreakableItems : MonoBehaviour, IInteractable
             _audioManager.playerSound(breakingSoundEffect[randomNumber].ac, breakingSoundEffect[randomNumber].voloume);
             _particleSystem.Play();
             GetComponent<BoxCollider>().enabled = false;
-
+            _eventcore.UE_BreakableObjectTriggered.Invoke(_toolNeededToDestroy, 1);
             for(int i = 0; i < transform.childCount; i++)
             {
                 transform.GetChild(i).gameObject.SetActive(false);

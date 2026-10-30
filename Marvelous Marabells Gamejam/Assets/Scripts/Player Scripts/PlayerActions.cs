@@ -187,6 +187,7 @@ public class PlayerActions : MonoBehaviour
                     }
 
                     GameObject grabbedTool = Instantiate(hit.collider.GetComponent<ToolBoardTool>().thisToolPrefab, gameObject.transform);
+                    grabbedTool.SetActive(false);
                     _playerInventory.playerTools[Array.IndexOf(_playerInventory.playerTools, var)] = grabbedTool.GetComponent<Tool>();
                     _eventCore.UE_ToolInventoryChange.Invoke();
                     hit.collider.gameObject.SetActive(false);

@@ -10,7 +10,7 @@ public class ShopButtons : MonoBehaviour
     [SerializeField] private GameObject objectToBuy;
     [SerializeField] private Plants buyingPlant;
     [SerializeField] private PlayerInventory playerInventroy;
-
+    [SerializeField] private playerProgress _playerProgress;
     [Header("Sound Effects")]
     [SerializeField] audioData[] buyingSoundEffect = new audioData[0];
     [SerializeField] AudioManager _audioManager;
@@ -21,6 +21,27 @@ public class ShopButtons : MonoBehaviour
     {
         _thisButton = GetComponent<Button>();
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+
+        if (_playerProgress == null)
+            return;
+
+        if (objectToBuy.GetComponent<ToolBoardTool>().thisToolObject.toolType == toolTypes.Axe)
+        {
+            if (_playerProgress.hasAxe)
+            {
+                _itemCost = 0;
+                deactivateButton();
+            }
+        }
+        
+        if (objectToBuy.GetComponent<ToolBoardTool>().thisToolObject.toolType == toolTypes.Hammer)
+        {
+            if (_playerProgress.hasHammer)
+            {
+                _itemCost = 0;
+                deactivateButton();
+            }
+        }
     }
     public void processBuying()
     {

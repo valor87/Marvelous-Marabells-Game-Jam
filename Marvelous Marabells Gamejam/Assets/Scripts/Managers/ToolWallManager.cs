@@ -3,17 +3,21 @@ using UnityEngine;
 public class ToolWallManager : MonoBehaviour
 {
     [SerializeField] private ToolBoardTool[] CurrentToolsOnWall = new ToolBoardTool[4];
+    [SerializeField] private ToolsObject _hammerTool;
+    [SerializeField] private ToolsObject _axeTool;
+
+    [SerializeField] private playerProgress _playerProgress;
     void Start()
     {
-
+        if (_playerProgress.hasAxe)
+        {
+            setToolActive(_axeTool);
+        }
+        if (_playerProgress.hasHammer)
+        {
+            setToolActive(_hammerTool);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public bool checkIfToolIsActive(ToolBoardTool checkingTool)
     {
         if (checkingTool.gameObject.activeInHierarchy)

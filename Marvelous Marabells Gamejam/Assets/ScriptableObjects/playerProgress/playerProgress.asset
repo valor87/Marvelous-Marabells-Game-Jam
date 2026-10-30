@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75066f5a026c84c46902b954aa96f409, type: 3}
+  m_Name: playerProgress
+  m_EditorClassIdentifier: Assembly-CSharp::playerProgress
+  day: 1
+  playerMoney: 100
+  playerWoodMaterials: 0
+  playerStoneMaterials: 0
+  hasAxe: 0
+  hasHammer: 0
+  palyerTools:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

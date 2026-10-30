@@ -9,6 +9,8 @@ public class DisplayMoney : MonoBehaviour
     [SerializeField] private string _text;
     [SerializeField] private float _targetAmount;
     [SerializeField] private ShopManager _shopManager;
+    [SerializeField] private PlayerData _playerData;
+
     private Eventcore _eventCore;
     private Coroutine _coroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,6 +19,7 @@ public class DisplayMoney : MonoBehaviour
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
         _eventCore.UE_SoldItem.AddListener(gainMoney);
         _eventCore.UE_PurchasedItem.AddListener(spendMoney);
+        _eventCore.UE_SavePlayerData.AddListener(saveMoneyData);
         StartCoroutine(gainMoneyFunctions());
     }
 
@@ -24,6 +27,12 @@ public class DisplayMoney : MonoBehaviour
     void Update()
     {
         _moneyText.text = $"{_text} {_shopManager._playerMoney.currentMoney}";
+    }
+
+    void saveMoneyData()
+    {
+        _playerData.varPlayerProgress.playerMoney = _shopManager._playerMoney.currentMoney;
+        _playerData.varPlayerProgress.day++;
     }
     void spendMoney(int changeAmount)
     {
