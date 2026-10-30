@@ -44,6 +44,9 @@ public class DebrisGenerator : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             list.Add(transform.GetChild(i));
+            list[i].transform.GetChild(0).gameObject.transform.localPosition = Vector3.zero;
+            list[i].transform.GetChild(0).gameObject.transform.localScale = Vector3.one * 300;
+
         }
         return _plantableSoil = list;
     }

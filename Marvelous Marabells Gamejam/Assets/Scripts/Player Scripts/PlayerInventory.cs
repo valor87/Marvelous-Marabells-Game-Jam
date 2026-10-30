@@ -32,17 +32,33 @@ public class PlayerInventory : MonoBehaviour
         if (inventory == activeInventory.Crop)
             changeCrop();
     }
+    void turnOffTools()
+    {
+        foreach (Tool var in playerTools)
+        {
+            if(var == null)
+                continue;
 
+            var.deactivateTool();
+        }
+    }
+    void turnOffCrops()
+    {
+        foreach (PickableCrop var in playerCrops)
+        {
+            if (var == null)
+                continue;
+
+            var.deactivateCrop();
+        }
+    }
     void changeInventory()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (playerCrops[inventoryIndex] != null)
-                playerCrops[inventoryIndex].deactivateCrop();
-            if (playerTools[Mathf.Clamp(inventoryIndex, 0, playerTools.Length - 1)] != null)
-            {
-                playerTools[inventoryIndex].deactivateTool();
-            }
+            turnOffCrops();
+            turnOffTools();
+
             inventoryIndex = 0;
 
             switch (activeInvetoryState)
@@ -53,6 +69,8 @@ public class PlayerInventory : MonoBehaviour
                     if (playerCrops[inventoryIndex] != null)
                         playerCrops[inventoryIndex].activateCrop();
                     _eventCore.UE_CropChange.Invoke(inventoryIndex);
+                    _playerActions.changeTool(null);
+                    _playerActions.changeCrop(playerCrops[inventoryIndex]);
                     break;
 
                 case false:
@@ -61,6 +79,8 @@ public class PlayerInventory : MonoBehaviour
                     if (playerTools[inventoryIndex] != null)
                         playerTools[inventoryIndex].activateTool();
                     _eventCore.UE_ToolChange.Invoke(inventoryIndex);
+                    _playerActions.changeCrop(null);
+                    _playerActions.changeTool(playerTools[inventoryIndex]);
                     break;
             }
         }
@@ -124,10 +144,11 @@ public class PlayerInventory : MonoBehaviour
 
             _playerActions.changeCrop(playerCrops[inventoryIndex]);
 
-            if (playerCrop != null)
-                playerCrop.deactivateCrop();
+            
             if (playerCrops[inventoryIndex] != null)
                 playerCrops[inventoryIndex].activateCrop();
+            if (playerCrop != null)
+                playerCrop.deactivateCrop();
         }
 
         // same as above but for the reverse
@@ -143,10 +164,11 @@ public class PlayerInventory : MonoBehaviour
 
             _playerActions.changeCrop(playerCrops[inventoryIndex]);
 
-            if (playerCrop != null)
-                playerCrop.deactivateCrop();
+            
             if (playerCrops[inventoryIndex] != null)
                 playerCrops[inventoryIndex].activateCrop();
+            if (playerCrop != null)
+                playerCrop.deactivateCrop();
         }
     }
     public void addSeedBagToInventory(Plants seedBag)
@@ -180,5 +202,10 @@ public class PlayerInventory : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public int setInventoryIndex(int n)
+    {
+        return inventoryIndex = n;
     }
 }
