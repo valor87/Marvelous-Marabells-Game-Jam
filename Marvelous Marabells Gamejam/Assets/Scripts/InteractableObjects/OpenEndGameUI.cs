@@ -26,6 +26,7 @@ public class OpenEndGameUI : MonoBehaviour
                 _activateObject.SetActive(true);
                 _eventcore.UE_DeactivatePlayer.Invoke();
             }
+            _interactImageOff = false;
             _openPrompt.SetActive(true);
         }
         else if (Vector3.Distance(transform.position, _playerTransform.position) > _triggerDistence && !_interactImageOff)

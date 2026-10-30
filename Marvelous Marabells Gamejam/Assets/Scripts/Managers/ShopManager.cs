@@ -12,6 +12,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private GameObject _openShopPrompt;
     private Transform _playerTransform;
     private Eventcore _eventcore;
+
+    private bool _interactImageOff = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,9 +32,11 @@ public class ShopManager : MonoBehaviour
                 _eventcore.UE_DeactivatePlayer.Invoke();
             }
             _openShopPrompt.SetActive(true);
+            _interactImageOff = false;
         }
-        else
+        else if(Vector3.Distance(transform.position, _playerTransform.position) > _triggerDistence && !_interactImageOff)
         {
+            _interactImageOff = true;
             _openShopPrompt.SetActive(false);
         }
     }
