@@ -64,6 +64,8 @@ public class PlayerActions : MonoBehaviour
         /////// if the player has a tool in hand//////
         if (Input.GetKeyDown(_useToolPrimary))
         {
+            if(_toolEquiped.thisTool.toolType == toolTypes.WateringCan && currentWater < 0)
+                return;
             preformToolAction();
             _toolEquiped.useToolPrimary();
             useEnergy(-_toolEquiped.thisTool.energyNeeded);
@@ -100,6 +102,9 @@ public class PlayerActions : MonoBehaviour
             if (hit.collider.GetComponent<PlantableSoil>() != null && _toolEquiped.thisTool.seedTypes != seedTypes.None
                 && hit.collider.GetComponent<PlantableSoil>()._isTilled)
             {
+                if(hit.collider.GetComponent<PlantableSoil>()._isPlanted)
+                    return;
+
                 hit.collider.GetComponent<PlantableSoil>().plantSeed(_toolEquiped.thisSeedType);
                 if (_toolEquiped.thisTool.consumable)
                 {

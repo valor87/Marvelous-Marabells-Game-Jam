@@ -22,7 +22,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
     private Eventcore _eventCore;
     [HideInInspector] public bool _isTilled;
     private bool _isWatered;
-    private bool _isPlanted;
+    public bool _isPlanted;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

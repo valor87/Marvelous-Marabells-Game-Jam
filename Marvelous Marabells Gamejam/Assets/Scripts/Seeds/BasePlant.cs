@@ -66,7 +66,7 @@ public class BasePlant : MonoBehaviour, IInteractable
         copyCrop.GetComponent<PickableCrop>().basePlant = this;
         copyCrop.GetComponent<PickableCrop>().thisPlantObejct = plants;
         _eventCore.UE_PickPlant.Invoke(copyCrop.GetComponent<PickableCrop>());
-
+        _eventCore.UE_CropInventoryChange.Invoke();
         destroyThisCrop();
         Destroy(copyCrop);
     }

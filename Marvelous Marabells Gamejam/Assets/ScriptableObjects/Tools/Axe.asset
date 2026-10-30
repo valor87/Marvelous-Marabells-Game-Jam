@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Axe
-  energyNeeded: 10
+  energyNeeded: 5
   toolType: 5
   twoHanded: 0
   consumable: 0

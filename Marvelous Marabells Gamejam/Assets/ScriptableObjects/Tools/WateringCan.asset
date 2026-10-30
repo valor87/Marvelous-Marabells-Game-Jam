@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WateringCan
   m_EditorClassIdentifier: Assembly-CSharp::ToolsObject
   toolName: Watering can
+  energyNeeded: 2
   toolType: 2
   twoHanded: 0
   consumable: 0

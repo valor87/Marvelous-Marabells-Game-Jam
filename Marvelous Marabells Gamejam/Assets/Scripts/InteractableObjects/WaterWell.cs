@@ -12,7 +12,7 @@ public class WaterWell : MonoBehaviour, IInteractable
 
     public void Execute(toolTypes arg)
     {
-        if (arg == toolTypes.WateringCan)
+        if (arg == toolTypes.None)
         {
             _evenCore.UE_FillWateringCan.Invoke();
         }

@@ -16,6 +16,7 @@ MonoBehaviour:
   sellAmount: 10
   growDuration: 15
   growSpeed: 1
-  plantSprite: {fileID: 21300000, guid: d1e5810fa2e2f434c8e8d90a3ee9a983, type: 3}
+  reGrow: 0
+  plantSprite: {fileID: 21300000, guid: 7dd239f48d55d914da3a228fb46982c5, type: 3}
   seedTypes: 3
   plantObject: {fileID: 2297394921325388876, guid: b332dd08d361bfe4594c2738c72f43a6, type: 3}
