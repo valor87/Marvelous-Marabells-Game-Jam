@@ -12,7 +12,6 @@ public class PickableCrop : MonoBehaviour, IInteractable
     [SerializeField] private float _currentGrowTime;
     [SerializeField] private int _cropSellPrice;
     [SerializeField] private bool _reGrow;
-
     public GameObject cropPrefab;
 
     private Vector3 startScale = Vector3.zero;
@@ -25,6 +24,12 @@ public class PickableCrop : MonoBehaviour, IInteractable
         _growDuration = thisPlantObejct.growDuration;
         _cropSellPrice = thisPlantObejct.sellAmount;
         _reGrow = thisPlantObejct.reGrow;
+
+        if (!_reGrow)
+        {
+            _currentGrowTime = _growDuration;
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
