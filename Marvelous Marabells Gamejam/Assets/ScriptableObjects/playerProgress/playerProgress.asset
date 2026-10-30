@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: playerProgress
   m_EditorClassIdentifier: Assembly-CSharp::playerProgress
   day: 1
-  playerMoney: 10
+  playerMoney: 100
   playerWoodMaterials: 0
   playerStoneMaterials: 0
   hasAxe: 0

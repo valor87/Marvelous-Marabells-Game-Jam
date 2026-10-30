@@ -20,6 +20,9 @@ public class DisplayMoney : MonoBehaviour
         _eventCore.UE_SoldItem.AddListener(gainMoney);
         _eventCore.UE_PurchasedItem.AddListener(spendMoney);
         _eventCore.UE_SavePlayerData.AddListener(saveMoneyData);
+        _shopManager._playerMoney.currentMoney = 0;
+        _targetAmount = _playerData.varPlayerProgress.playerMoney;
+
         StartCoroutine(gainMoneyFunctions());
     }
 
