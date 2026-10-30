@@ -26,14 +26,7 @@ public class PlantManager : MonoBehaviour
             if (plant.seedTypes == desiredPlant)
             {
                 GameObject _plantObject = Instantiate(plant.plantObject);
-                if (_plantObject.GetComponent<BasePlant>().oneTimeGrow)
-                {
-                    _plantObject.transform.position = soilTransform.position;
-                }
-                else
-                {
-                    _plantObject.transform.position = soilTransform.position + Vector3.up;
-                }
+                _plantObject.transform.position = soilTransform.position;
                 _plantObject.transform.localScale = Vector3.one;
                 _plantObject.GetComponent<BasePlant>().soilPlantedOn = soilTransform.GetComponent<PlantableSoil>();
                 soilTransform.GetComponent<PlantableSoil>().growingPlant = _plantObject.GetComponent<BasePlant>();

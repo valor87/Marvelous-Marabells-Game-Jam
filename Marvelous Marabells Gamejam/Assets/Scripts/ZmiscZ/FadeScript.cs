@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class FadeScript
 {
+    public bool fadeComplete = false;
+
     public IEnumerator fadeFunctionUI(Image _UiImage, Color _imageColor, float _fadeAmount = 0.005f, float waitTime = 0.5f)
     {
         float fadeAmount = 0;
@@ -15,6 +17,7 @@ public class FadeScript
         }
 
         yield return new WaitForSeconds(waitTime);
+        fadeComplete = true;
 
         while (fadeAmount > 0)
         {
@@ -22,6 +25,7 @@ public class FadeScript
             fadeAmount -= _fadeAmount;
             yield return null;
         }
+
     }
 
     public IEnumerator fadeFunctionSpryte(SpriteRenderer _sprite, Color _imageColor, float _fadeAmount = 0.005f, float waitTime = 0.5f)
@@ -42,5 +46,7 @@ public class FadeScript
             fadeAmount -= _fadeAmount;
             yield return null;
         }
+
+        fadeComplete = true;
     }
 }

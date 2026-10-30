@@ -69,6 +69,9 @@ public class OpeningDoors : MonoBehaviour, IInteractable
 
     public void Execute(toolTypes arg)
     {
+        if(_currentTime / _timeToOpen != 0)
+            return;
+
         if (arg == toolTypes.None)
         {
             _activate = true;
