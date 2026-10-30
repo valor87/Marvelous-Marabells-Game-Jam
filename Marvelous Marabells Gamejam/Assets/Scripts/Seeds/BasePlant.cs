@@ -16,7 +16,7 @@ public class BasePlant : MonoBehaviour, IInteractable
 
     public bool oneTimeGrow = false;
     [SerializeField] private PickableCrop _PickableCrop;
-    private bool _fullyGrown;
+    private bool _fullyGrown = false;
     private Eventcore _eventCore;
     void Start()
     {
@@ -31,7 +31,7 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         if (_growTime > _currentGrowTime)
         {
-            transform.localScale = (_finalGrowSize / 2) * (_currentGrowTime / _growTime);
+            transform.localScale = (_finalGrowSize) * (_currentGrowTime / _growTime);
             _currentGrowTime += growSpeed * Time.deltaTime;
         }
 
@@ -53,13 +53,14 @@ public class BasePlant : MonoBehaviour, IInteractable
         GameObject _tempCrop = Instantiate(_cropToGrow, transform);
         _tempCrop.GetComponent<PickableCrop>().basePlant = this;
         _tempCrop.GetComponent<PickableCrop>().thisPlantObejct = plants;
-        _tempCrop.transform.position = transform.position + new Vector3(transform.localScale.x, transform.localScale.y, 0);
+        _tempCrop.transform.position = transform.position;
     }
 
     public void Execute(toolTypes args)
     {
-        if (args != toolTypes.None && _fullyGrown)
+        if (args != toolTypes.None || !_fullyGrown)
             return;
+        Debug.Log($"picked {plants.name}");
         GameObject copyCrop = Instantiate(_cropToGrow, transform);
         copyCrop.SetActive(false);
         copyCrop.GetComponent<PickableCrop>().basePlant = this;
