@@ -12,7 +12,8 @@ public class ShopButtons : MonoBehaviour
     [SerializeField] private PlayerInventory playerInventroy;
     [SerializeField] private playerProgress _playerProgress;
     [SerializeField] private TimeManager _timeManager;
-
+    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private bool  isaxe;
     [Header("Sound Effects")]
     [SerializeField] audioData[] buyingSoundEffect = new audioData[0];
     [SerializeField] AudioManager _audioManager;
@@ -23,6 +24,8 @@ public class ShopButtons : MonoBehaviour
     {
         _thisButton = GetComponent<Button>();
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+        _playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+
 
         if (_playerProgress == null)
             return;
@@ -66,6 +69,15 @@ public class ShopButtons : MonoBehaviour
         _soldOutText.SetActive(true);
         if(objectToBuy != null)
             objectToBuy.SetActive(true);
+
+        if (isaxe)
+        {
+            _playerData.varPlayerProgress.hasAxe = true;
+        }
+        else
+        {
+            _playerData.varPlayerProgress.hasHammer = true;
+        }
         _thisButton.interactable = false;
     }
     public void processTimeSlow()

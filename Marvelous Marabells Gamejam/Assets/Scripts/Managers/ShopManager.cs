@@ -17,13 +17,13 @@ public class ShopManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _playerMoney.currentMoney = _currentMoney;
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _eventcore = GameObject.Find("EventCore").GetComponent<Eventcore>();
     }
 
     private void Update()
     {
+        
         if (Vector3.Distance(transform.position, _playerTransform.position) < _triggerDistence)
         {
             if (Input.GetKeyDown(_openShopKeyCode))

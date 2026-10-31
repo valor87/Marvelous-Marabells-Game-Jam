@@ -7,10 +7,10 @@ public class DisplayMoney : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private string _text;
-    [SerializeField] private float _targetAmount;
+    [SerializeField] private int _targetAmount;
     [SerializeField] private ShopManager _shopManager;
     [SerializeField] private PlayerData _playerData;
-
+    private int moneyDisplay = 0;
     private Eventcore _eventCore;
     private Coroutine _coroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,14 +22,16 @@ public class DisplayMoney : MonoBehaviour
         _eventCore.UE_SavePlayerData.AddListener(saveMoneyData);
         _shopManager._playerMoney.currentMoney = 0;
         _targetAmount = _playerData.varPlayerProgress.playerMoney;
-
         StartCoroutine(gainMoneyFunctions());
+        _shopManager._playerMoney.currentMoney = _targetAmount;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        _moneyText.text = $"{_text} {_shopManager._playerMoney.currentMoney}";
+        _playerData.varPlayerProgress.playerMoney = _shopManager._playerMoney.currentMoney;
+        _moneyText.text = $"{_text} {moneyDisplay}";
     }
 
     void saveMoneyData()
@@ -40,10 +42,13 @@ public class DisplayMoney : MonoBehaviour
     void spendMoney(int changeAmount)
     {
         _targetAmount -= changeAmount;
+
         if (_coroutine == null)
         {
             _coroutine = StartCoroutine(spendMoneyFunctions());
         }
+        _shopManager._playerMoney.currentMoney -= changeAmount;
+
     }
     void gainMoney(int changeAmount)
     {
@@ -52,9 +57,12 @@ public class DisplayMoney : MonoBehaviour
         {
             _coroutine = StartCoroutine(gainMoneyFunctions());
         }
+        _shopManager._playerMoney.currentMoney += changeAmount;
+
     }
     IEnumerator gainMoneyFunctions()
     {
+        moneyDisplay = _shopManager._playerMoney.currentMoney;
         float fadeAmount = 0;
         while (fadeAmount < 1)
         {
@@ -67,7 +75,7 @@ public class DisplayMoney : MonoBehaviour
 
         while (0 < _targetAmount)
         {
-            _shopManager._playerMoney.currentMoney++;
+            moneyDisplay++;
             _targetAmount--;
             yield return new WaitForSeconds(0.01f);
         }
@@ -84,7 +92,10 @@ public class DisplayMoney : MonoBehaviour
     }
     IEnumerator spendMoneyFunctions()
     {
+        moneyDisplay = _shopManager._playerMoney.currentMoney;
+
         float fadeAmount = 0;
+
         while (fadeAmount < 1)
         {
             _moneyText.color = new Color(1f, 1f, 1f, fadeAmount);
@@ -96,7 +107,7 @@ public class DisplayMoney : MonoBehaviour
 
         while (_targetAmount < 0)
         {
-            _shopManager._playerMoney.currentMoney--;
+            moneyDisplay--;
             _targetAmount++;
             yield return new WaitForSeconds(0.01f);
         }

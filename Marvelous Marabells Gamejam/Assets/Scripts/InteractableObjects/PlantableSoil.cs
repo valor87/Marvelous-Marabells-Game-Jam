@@ -94,6 +94,7 @@ public class PlantableSoil : MonoBehaviour, IInteractable
 
     public void clearSoil()
     {
+        _isPlanted = false;
         _isTilled = false;
         _isWatered = false;
         transform.GetChild(0).gameObject.SetActive(false);

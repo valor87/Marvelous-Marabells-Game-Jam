@@ -4,6 +4,7 @@ public class PlayerData : MonoBehaviour
 {
     public playerProgress varPlayerProgress;
     public Eventcore Eventcore;
+    public TimeManager TimeManager;
     FadeScript _fadeScript = new FadeScript();
     private void Start()
     {
@@ -12,13 +13,21 @@ public class PlayerData : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        if (varPlayerProgress.startDayLate == true)
+        {
+            TimeManager.currentHour = 10;
+            varPlayerProgress.startDayLate = false;
+        }
     }
 
     private void Update()
     {
+        
+
         if (Eventcore == null)
         {
             Eventcore = GameObject.Find("EventCore").GetComponent<Eventcore>();
+            TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
             Eventcore.UE_BreakableObjectTriggered.AddListener(increaseMaterialsCount);
         }
     }

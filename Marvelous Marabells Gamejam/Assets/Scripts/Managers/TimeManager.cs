@@ -1,25 +1,30 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
     public float timePassing = 1;
     public int startingHour;
     public int startingMinute;
-    private int currentHour;
+    public int currentHour;
     private int currentMinute;
     public float currentSecond;
     public float slowDownTime = 100;
-    private Eventcore _eventCore;
-    private timePeriod _timePeriod;
 
+    public int endGameHour = 12;
+    public timePeriod endGameTimePeriod = timePeriod.AM;
+    private Eventcore _eventCore;
+    public timePeriod _timePeriod;
+    public StartBoxFade _boxFade;
+    public playerProgress _playerProgress;
+    float t = 0;
     private void Start()
     {
         currentMinute = startingMinute;
-        currentHour = startingHour;
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
         StartCoroutine(MyLateStart());
-        
+
     }
     IEnumerator MyLateStart()
     {
@@ -31,6 +36,16 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         passTime();
+
+        if (currentHour == endGameHour && _timePeriod == endGameTimePeriod)
+        {
+            _boxFade.startFade();
+            t += Time.deltaTime;
+            if (t > _boxFade.totalWaitTime)
+            {
+                loadNextScene();
+            }
+        }
     }
 
     void passTime()
@@ -58,12 +73,8 @@ public class TimeManager : MonoBehaviour
             _eventCore.UE_TurnOfTheHour.Invoke(currentHour);
         }
 
-        
 
-        if (currentHour < 11)
-        {
-            _timePeriod = timePeriod.AM;
-        }
+
         if (currentHour > 11)
         {
             _timePeriod = timePeriod.PM;
@@ -72,5 +83,16 @@ public class TimeManager : MonoBehaviour
     public void slowTime()
     {
         timePassing = slowDownTime;
+    }
+    bool save = false;
+    void loadNextScene()
+    {
+        if (!save)
+        {
+            _eventCore.UE_SavePlayerData.Invoke();
+            _playerProgress.startDayLate = true;
+            save = true;
+        }
+        SceneManager.LoadScene(1);
     }
 }

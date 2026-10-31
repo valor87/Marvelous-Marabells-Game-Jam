@@ -14,7 +14,7 @@ public class PlayerInventory : MonoBehaviour
     private int inventoryIndex;
 
     [SerializeField] private GameObject _seedPrefab;
-
+    [SerializeField] private GameObject[] _playerCropsPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -177,7 +177,15 @@ public class PlayerInventory : MonoBehaviour
         {
             if (currentTool == null)
             {
-                GameObject createdSeed = Instantiate(_seedPrefab);
+                GameObject instanitatingBag = null;
+                foreach (GameObject var in _playerCropsPrefab)
+                {
+                    if (seedBag.seedTypes == var.GetComponent<Tool>().thisSeedType)
+                    {
+                        instanitatingBag = var;
+                    }
+                }
+                GameObject createdSeed = Instantiate(instanitatingBag);
                 Debug.Log(seedBag.seedTypes);
                 createdSeed.GetComponent<Tool>().thisSeedType = seedBag.seedTypes;
                 int index = Array.IndexOf(playerTools, currentTool);

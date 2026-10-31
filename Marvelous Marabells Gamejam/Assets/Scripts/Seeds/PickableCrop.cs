@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PickableCrop : MonoBehaviour, IInteractable
@@ -6,7 +7,7 @@ public class PickableCrop : MonoBehaviour, IInteractable
     public Plants thisPlantObejct; 
     [HideInInspector] public BasePlant basePlant;
     private Eventcore _eventCore;
-    
+
     [SerializeField] private float _growSpeed;
     [SerializeField] private float _growDuration;
     [SerializeField] private float _currentGrowTime;
@@ -45,6 +46,8 @@ public class PickableCrop : MonoBehaviour, IInteractable
     {
         if (args != toolTypes.None || _currentGrowTime < _growDuration)
             return;
+
+        basePlant.PickableCrop = null;
         _eventCore.UE_PickPlant.Invoke(this);
         if (_reGrow)
         {

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: playerProgress
   m_EditorClassIdentifier: Assembly-CSharp::playerProgress
   day: 1
-  playerMoney: 1500
-  playerWoodMaterials: 1000
-  playerStoneMaterials: 1000
+  playerMoney: 100
+  playerWoodMaterials: 0
+  playerStoneMaterials: 0
   hasAxe: 0
   hasHammer: 0
+  startDayLate: 0
   palyerTools:
   - {fileID: 0}
   - {fileID: 0}

@@ -18,9 +18,13 @@ public class BasePlant : MonoBehaviour, IInteractable
     [SerializeField] private PickableCrop _PickableCrop;
     private bool _fullyGrown = false;
     private Eventcore _eventCore;
+    [SerializeField] private PlayerInventory _playerInventory;
+    public PickableCrop PickableCrop;
     void Start()
     {
         transform.localScale = Vector3.zero;
+        _playerInventory = GameObject.Find("PlayerObj").GetComponent<PlayerInventory>();
+
         _eventCore = GameObject.Find("EventCore").GetComponent<Eventcore>();
 
         _growTime = plants.growDuration;
@@ -40,8 +44,9 @@ public class BasePlant : MonoBehaviour, IInteractable
             _fullyGrown = true;
         }
 
-        if (_fullyGrown && !oneTimeGrow)
+        if (_fullyGrown && !oneTimeGrow && PickableCrop == null)
         {
+            GetComponent<CapsuleCollider>().enabled = false;
             growCrop();
             _fullyGrown = false;
             _growTime = _currentGrowTime;
@@ -51,6 +56,7 @@ public class BasePlant : MonoBehaviour, IInteractable
     void growCrop()
     {
         GameObject _tempCrop = Instantiate(_cropToGrow, transform);
+        PickableCrop = _tempCrop.GetComponent<PickableCrop>();
         _tempCrop.GetComponent<PickableCrop>().basePlant = this;
         _tempCrop.GetComponent<PickableCrop>().thisPlantObejct = plants;
         _tempCrop.transform.position = transform.position;
@@ -60,7 +66,9 @@ public class BasePlant : MonoBehaviour, IInteractable
     {
         if (args != toolTypes.None || !_fullyGrown)
             return;
-        Debug.Log($"picked {plants.name}");
+        if (_playerInventory.playerCrops[_playerInventory.playerCrops.Length - 1] != null)
+            return;
+        
         GameObject copyCrop = Instantiate(_cropToGrow, transform);
         copyCrop.SetActive(false);
         copyCrop.GetComponent<PickableCrop>().basePlant = this;

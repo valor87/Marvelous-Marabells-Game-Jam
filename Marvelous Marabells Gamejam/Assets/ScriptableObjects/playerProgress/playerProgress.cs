@@ -10,6 +10,7 @@ public class playerProgress : ScriptableObject
 
     public bool hasAxe = false;
     public bool hasHammer = false;
+    public bool startDayLate = false;
 
     public Tool[] palyerTools = new Tool[3];
 }
