@@ -1,5 +1,3 @@
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SellBox : MonoBehaviour, IInteractable
